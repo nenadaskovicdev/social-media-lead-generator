@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Generation Tool</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .pagination { margin-top: 20px; }
+        .filters { margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-radius: 5px; }
+        input, select, button { padding: 8px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Lead Generation Tool</h1>
+    
+    <div class="filters">
+        <input type="text" id="usernameFilter" placeholder="Filter by username">
+        <select id="countryFilter">
+            <option value="">All Countries</option>
+        </select>
+        <button onclick="loadLeads()">Apply Filters</button>
+    </div>
+    
+    <table id="leadsTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Bio</th>
+                <th>Followers</th>
+                <th>Following</th>
+                <th>Posts</th>
+                <th>Emails</th>
+                <th>Phone Numbers</th>
+                <th>Country</th>
+                <th>Last Scraped</th>
+            </tr>
+        </thead>
+        <tbody id="leadsBody"></tbody>
+    </table>
+    
+    <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Previous</button>
+        <span id="pageInfo">Page 1 of 1</span>
+        <button id="nextPage" onclick="changePage(1)">Next</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        let totalPages = 1;
+        let currentUsername = '';
+        let currentCountry = '';
+        
+        async function loadCountries() {
+            try {
+                const response = await fetch('/api/countries');
+                const data = await response.json();
+                const countryFilter = document.getElementById('countryFilter');
+                
+                data.countries.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country;
+                    option.textContent = country;
+                    countryFilter.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading countries:', error);
+            }
+        }
+        
+        async function loadLeads(page = 1) {
+            currentUsername = document.getElementById('usernameFilter').value;
+            currentCountry = document.getElementById('countryFilter').value;
+            
+            const params = new URLSearchParams({
+                page: page,
+                limit: 20
+            });
+            
+            if (currentUsername) params.append('username', currentUsername);
+            if (currentCountry) params.append('country', currentCountry);
+            
+            try {
+                const response = await fetch(`/api/leads?${params}`);
+                const data = await response.json();
+                
+                const tbody = document.getElementById('leadsBody');
+                tbody.innerHTML = '';
+                
+                data.leads.forEach(lead => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><a href="${lead.profile_url}" target="_blank">${lead.username}</a></td>
+                        <td>${lead.full_name || ''}</td>
+                        <td>${lead.bio || ''}</td>
+                        <td>${lead.follower_count.toLocaleString()}</td>
+                        <td>${lead.following_count.toLocaleString()}</td>
+                        <td>${lead.post_count.toLocaleString()}</td>
+                        <td>${lead.emails.join(', ')}</td>
+                        <td>${lead.phone_numbers.join(', ')}</td>
+                        <td>${lead.country || ''}</td>
+                        <td>${new Date(lead.timestamp).toLocaleDateString()}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                
+                currentPage = data.page;
+                totalPages = data.pages;
+                
+                document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${totalPages}`;
+                document.getElementById('prevPage').disabled = currentPage <= 1;
+                document.getElementById('nextPage').disabled = currentPage >= totalPages;
+                
+            } catch (error) {
+                console.error('Error loading leads:', error);
+            }
+        }
+        
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                loadLeads(newPage);
+            }
+        }
+        
+        // Load countries and initial leads on page load
+        window.onload = function() {
+            loadCountries();
+            loadLeads();
+        };
+    </script>
+</body>
+</html>
