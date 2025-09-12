@@ -135,13 +135,11 @@ class InstagramScraper:
 
         try:
             search_url = f"https://www.instagram.com/web/search/topsearch/?query={keyword} {country}"
-            await page.goto(search_url)
 
-            response = await page.wait_for_response(
-                lambda response: response.url == search_url
-            )
+            # Intercept the API response directly instead of waiting on page
+            response = await context.request.get(search_url)
             data = await response.json()
-
+            print(data)
             if "users" in data:
                 for user in data["users"][:limit]:
                     if "user" in user and "username" in user["user"]:

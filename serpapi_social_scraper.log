@@ -1,0 +1,11 @@
+2025-09-12 21:10:11,804 - INFO - Added Instagram jelena.nyc (409936 followers)
+2025-09-12 21:10:18,058 - INFO - Added Instagram lindanguyenlee (21019 followers)
+2025-09-12 21:10:24,170 - INFO - Added Instagram viverenewyork (121972 followers)
+2025-09-12 21:10:31,928 - INFO - Added Instagram toosha_z (22403 followers)
+2025-09-12 21:10:36,101 - INFO - Added Instagram kaishacreates (23876 followers)
+2025-09-12 21:10:40,742 - INFO - Added Instagram lindaxnyc (45630 followers)
+2025-09-12 21:10:44,208 - INFO - Added Instagram thecreativegentleman (42813 followers)
+2025-09-12 21:11:03,731 - WARNING - Failed to fetch Instagram DOEMBDvDe9C: JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=doembdvde9c&include_reel=False&__a=1
+2025-09-12 21:11:11,940 - INFO - Added Instagram lighttravelsfaster (350041 followers)
+2025-09-12 21:11:19,196 - INFO - Added Instagram vickirutwind (131976 followers)
+2025-09-12 21:11:21,197 - INFO - Saved 9 profiles to social_nyc_serpapi.json

@@ -1,84 +1,116 @@
-import asyncio
+# serpapi_social_scraper.py
+import json
 import logging
 import os
-from datetime import datetime
-from typing import List
+import time
 
-import motor.motor_asyncio
+import instaloader
 from dotenv import load_dotenv
-
-from .instagram_scraper import InstagramScraper
-from .utils import get_env_list
+from serpapi import GoogleSearch
 
 load_dotenv()
+# ---------------- CONFIG ----------------
+SERPAPI_KEY = os.getenv("SERPAPI", "2s7017")
+INSTAGRAM_QUERY = "site:instagram.com intitle:NYC influencer"
+TIKTOK_QUERY = "site:tiktok.com intitle:NYC influencer"
+MAX_PROFILES = 9
+DELAY = 2  # seconds
+OUTPUT_FILE = "social_nyc_serpapi.json"
+MIN_FOLLOWERS = 5000
+# ----------------------------------------
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("serpapi_social_scraper.log"),
+        logging.StreamHandler(),
+    ],
+)
+
+loader = instaloader.Instaloader()
 
 
-async def scrape_and_store(country: str):
-    # Setup MongoDB connection
-    client = motor.motor_asyncio.AsyncIOMotorClient(
-        os.getenv("MONGODB_URI", "mongodb://localhost:27017")
-    )
-    db = client[os.getenv("DATABASE_NAME", "lead_generation")]
-    collection = db[os.getenv("COLLECTION_NAME", "instagram_leads")]
+def fetch_urls(query, start=0, domain="instagram"):
+    search = GoogleSearch({"q": query, "api_key": SERPAPI_KEY, "start": start})
+    results = search.get_dict()
+    urls = []
+    if "organic_results" in results:
+        for r in results["organic_results"]:
+            link = r.get("link")
+            if link and f"{domain}.com/" in link and "/p/" not in link:
+                urls.append(link)
+    return urls
 
-    # Get search keywords
-    keywords = get_env_list("SCRAPER_KEYWORDS", ["designer", "photographer"])
 
-    async with InstagramScraper(headless=True) as scraper:
-        all_usernames = []
+def get_instagram_profile(url):
+    username = url.rstrip("/").split("/")[-1]
+    try:
+        profile = instaloader.Profile.from_username(loader.context, username)
+        return {
+            "username": profile.username,
+            "full_name": profile.full_name,
+            "followers": profile.followers,
+            "type": "instagram",
+        }
+    except Exception as e:
+        logging.warning(f"Failed to fetch Instagram {username}: {e}")
+        return None
 
-        # Discover profiles based on keywords and country
-        for keyword in keywords:
-            logger.info(
-                f"Discovering profiles for keyword: {keyword} in {country}"
-            )
-            usernames = await scraper.discover_profiles(
-                keyword, country, limit=20
-            )
-            all_usernames.extend(usernames)
 
-        # Remove duplicates
-        all_usernames = list(set(all_usernames))
-        logger.info(f"Found {len(all_usernames)} unique profiles to scrape")
+def main():
+    all_profiles = []
 
-        # Scrape each profile
-        successful_scrapes = 0
-        for username in all_usernames:
-            logger.info(f"Scraping profile: {username}")
-            profile_data = await scraper.scrape_profile(username, country)
+    # Scrape Instagram
+    start = 0
+    while len(all_profiles) < MAX_PROFILES:
+        urls = fetch_urls(INSTAGRAM_QUERY, start=start, domain="instagram")
+        if not urls:
+            logging.info("No more Instagram results from SerpApi.")
+            break
 
-            if profile_data:
-                # Add timestamp and source country
-                profile_data["timestamp"] = datetime.utcnow()
-                profile_data["source_country"] = country
-
-                # Update or insert in MongoDB
-                await collection.update_one(
-                    {"username": profile_data["username"]},
-                    {"$set": profile_data},
-                    upsert=True,
+        for url in urls:
+            profile_data = get_instagram_profile(url)
+            if profile_data and profile_data["followers"] >= MIN_FOLLOWERS:
+                all_profiles.append(profile_data)
+                logging.info(
+                    f"Added Instagram {profile_data['username']} ({profile_data['followers']} followers)"
                 )
-                successful_scrapes += 1
-                logger.info(f"Successfully stored profile: {username}")
+                if len(all_profiles) >= MAX_PROFILES:
+                    break
+            time.sleep(DELAY)
 
-        logger.info(
-            f"Scraping completed. Successfully stored {successful_scrapes} profiles"
-        )
+        start += 10
+        time.sleep(DELAY)
+
+    # Scrape TikTok (no follower filtering here unless you add a TikTok API)
+    start = 0
+    while len(all_profiles) < MAX_PROFILES:
+        urls = fetch_urls(TIKTOK_QUERY, start=start, domain="tiktok")
+        if not urls:
+            logging.info("No more TikTok results from SerpApi.")
+            break
+
+        for url in urls:
+            all_profiles.append(
+                {
+                    "username": url.rstrip("/").split("/")[-1],
+                    "profile_url": url,
+                    "type": "tiktok",
+                }
+            )
+            logging.info(f"Added TikTok {url}")
+            if len(all_profiles) >= MAX_PROFILES:
+                break
+            time.sleep(DELAY)
+
+        start += 10
+        time.sleep(DELAY)
+
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(all_profiles, f, indent=2)
+    logging.info(f"Saved {len(all_profiles)} profiles to {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(
-        description="Instagram Lead Generation Scraper"
-    )
-    parser.add_argument(
-        "--country", required=True, help="Target country for lead generation"
-    )
-
-    args = parser.parse_args()
-
-    asyncio.run(scrape_and_store(args.country.lower()))
+    main()
