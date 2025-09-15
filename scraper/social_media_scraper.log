@@ -1,0 +1,55 @@
+2025-09-14 11:11:09,203 - ERROR - Failed to connect to MongoDB: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a2af0b5e9154f22a9d8c, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:11:09,204 - ERROR - Failed to initialize scraper: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a2af0b5e9154f22a9d8c, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:11:09,204 - ERROR - Please check your MongoDB connection and credentials
+2025-09-14 11:11:09,204 - INFO - Scraping completed
+2025-09-14 11:13:01,552 - ERROR - Failed to connect to MongoDB: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a31f408976f96cb0ba44, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:13:01,553 - ERROR - Failed to initialize scraper: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a31f408976f96cb0ba44, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:13:01,553 - ERROR - Please check your MongoDB connection and credentials
+2025-09-14 11:13:01,553 - INFO - Scraping completed
+2025-09-14 11:14:37,729 - ERROR - Failed to connect to MongoDB: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a37fe9c8d11549a30129, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:14:37,729 - ERROR - Failed to initialize scraper: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a37fe9c8d11549a30129, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:14:37,729 - ERROR - Please check your MongoDB connection and credentials
+2025-09-14 11:14:37,730 - INFO - Scraping completed
+2025-09-14 11:16:43,807 - ERROR - Failed to connect to MongoDB: 127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a3fd0f510c956a72b2ac, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:16:43,807 - ERROR - Failed to initialize scraper: 127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a3fd0f510c956a72b2ac, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:16:43,807 - ERROR - Please check your MongoDB connection and credentials
+2025-09-14 11:16:43,807 - INFO - Scraping completed
+2025-09-14 11:35:53,902 - ERROR - Failed to connect to MongoDB: 127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a87bcd316430a8f77b33, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:35:53,902 - ERROR - Failed to initialize scraper: 127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a87bcd316430a8f77b33, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:35:53,902 - ERROR - Please check your MongoDB connection and credentials
+2025-09-14 11:35:53,902 - INFO - Scraping completed
+2025-09-14 11:38:43,759 - INFO - Scraping completed
+2025-09-14 11:39:35,574 - ERROR - Failed to connect to MongoDB: 127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a95911b8277f004396b2, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:39:35,574 - ERROR - Failed to initialize scraper: 127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68c6a95911b8277f004396b2, topology_type: Unknown, servers: [<ServerDescription ('127.0.0.1', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('127.0.0.1:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-14 11:39:35,574 - ERROR - Please check your MongoDB connection and credentials
+2025-09-14 11:39:35,575 - INFO - Scraping completed
+2025-09-14 11:40:53,573 - INFO - MongoDB indexes created successfully
+2025-09-14 11:40:53,573 - INFO - Successfully connected to MongoDB
+2025-09-14 11:40:53,574 - INFO - Starting Instagram scraping...
+2025-09-14 11:40:53,575 - INFO - Fetching SerpAPI result for site:instagram.com intitle:NYC influencer (start: 0)
+2025-09-14 11:41:09,843 - INFO - Scraped Instagram profile: lindanguyenlee (21016 followers)
+2025-09-14 11:41:15,794 - INFO - Scraped Instagram profile: lindaxnyc (45728 followers)
+2025-09-14 11:41:25,396 - INFO - Scraped Instagram profile: lighttravelsfaster (349980 followers)
+2025-09-14 11:41:34,169 - INFO - Scraped Instagram profile: toosha_z (22400 followers)
+2025-09-14 11:41:45,963 - INFO - Scraped Instagram profile: thecreativegentleman (42775 followers)
+2025-09-14 11:41:53,624 - INFO - Scraped Instagram profile: kaishacreates (23877 followers)
+2025-09-14 11:42:02,249 - INFO - Scraped Instagram profile: thedianaedelman (31049 followers)
+2025-09-14 11:42:06,415 - INFO - Scraped Instagram profile: vickirutwind (131972 followers)
+2025-09-14 11:42:10,431 - INFO - Fetching SerpAPI result for site:instagram.com intitle:NYC influencer (start: 10)
+2025-09-14 11:42:21,650 - INFO - Scraped Instagram profile: leahmarie.nyc (9990 followers)
+2025-09-14 11:42:26,446 - INFO - Scraped 9 Instagram profiles
+2025-09-14 11:42:26,446 - INFO - Starting TikTok scraping...
+2025-09-14 11:42:26,447 - INFO - Fetching SerpAPI result for site:tiktok.com intitle:NYC influencer (start: 0)
+2025-09-14 11:42:37,394 - INFO - Added TikTok profile: nyc-lifestyle-influencer
+2025-09-14 11:42:44,967 - INFO - Added TikTok profile: nyc-micro-influencers
+2025-09-14 11:42:51,865 - INFO - Added TikTok profile: nyc-family-influencers
+2025-09-14 11:42:58,005 - INFO - Added TikTok profile: 7514367598155369759
+2025-09-14 11:43:05,608 - INFO - Added TikTok profile: @crysscharms
+2025-09-14 11:43:13,274 - INFO - Added TikTok profile: nyc-influencer-day-in-my-life
+2025-09-14 11:43:19,545 - INFO - Added TikTok profile: 7479986328659135774
+2025-09-14 11:43:25,836 - INFO - Added TikTok profile: nyc-influencer-male-vloggers
+2025-09-14 11:43:28,529 - INFO - Fetching SerpAPI result for site:tiktok.com intitle:NYC influencer (start: 10)
+2025-09-14 11:43:40,589 - INFO - Added TikTok profile: influencer-bars-nyc
+2025-09-14 11:43:43,635 - INFO - Scraped 9 TikTok profiles
+2025-09-14 11:43:43,637 - INFO - Exported 18 profiles to social_media_profiles.json
+2025-09-14 11:43:43,637 - INFO - Scraping completed
