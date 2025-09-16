@@ -3,6 +3,7 @@ import json
 import logging
 import os
 import random
+import re
 import threading
 import time
 from datetime import datetime
@@ -36,9 +37,9 @@ MONGO_URI = os.getenv(
 MONGO_USERNAME = os.getenv("MONGO_USERNAME", "")
 MONGO_PASSWORD = os.getenv("MONGO_PASSWORD", "")
 DATABASE_NAME = "social_scraper"
-DEFAULT_INSTAGRAM_QUERY = "site:instagram.com intitle:NYC influencer"
-DEFAULT_TIKTOK_QUERY = "site:tiktok.com intitle:NYC influencer"
-MAX_PROFILES = 9
+DEFAULT_INSTAGRAM_QUERY = "site:instagram.com intitle:NYC "
+DEFAULT_TIKTOK_QUERY = "site:tiktok.com intitle:NYC "
+MAX_PROFILES = 5000
 MIN_FOLLOWERS = 5000
 
 # Delay configuration (in seconds)
@@ -352,6 +353,7 @@ class SocialMediaScraper:
                 "following",
                 "posts",
                 "bio",
+                "emails",  # Add emails field
                 "profile_url",
                 "type",
                 "scraped_at",
@@ -371,11 +373,34 @@ class SocialMediaScraper:
                             if char.isprintable() or char in ["\n", "\t", "\r"]
                         )
 
+                    # Convert emails list to string for CSV
+                    if "emails" in profile and profile["emails"]:
+                        profile["emails"] = ", ".join(profile["emails"])
+                    else:
+                        profile["emails"] = ""
+
                     writer.writerow(profile)
 
             logging.info(f"Exported {len(profiles)} profiles to {filename}")
         except Exception as e:
             logging.error(f"Error exporting profiles to CSV: {e}")
+
+    def fetch_tiktok_serpapi_urls(
+        self, query: str, start: int = 0
+    ) -> List[str]:
+        """Fetch TikTok profile URLs from SerpAPI with TikTok-specific filtering"""
+        urls = self.fetch_serpapi_urls(query, start, "tiktok")
+
+        # Filter out non-profile URLs more specifically for TikTok
+        profile_urls = []
+        for url in urls:
+            # TikTok profile URLs typically have the format: https://www.tiktok.com/@username
+            if "/@" in url and not any(
+                x in url for x in ["/video/", "/tag/", "/music/"]
+            ):
+                profile_urls.append(url)
+
+        return profile_urls
 
     def fetch_serpapi_urls(
         self, query: str, start: int = 0, domain: str = "instagram"
@@ -438,6 +463,17 @@ class SocialMediaScraper:
         path_parts = [part for part in parsed_url.path.split("/") if part]
         return path_parts[-1] if path_parts else ""
 
+    def extract_emails_from_text(self, text: str) -> List[str]:
+        """Extract email addresses from text using regex"""
+        if not text:
+            return []
+
+        # Regex pattern for matching email addresses
+        email_pattern = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
+        emails = re.findall(email_pattern, text)
+
+        return emails
+
     def scrape_instagram_profile(self, url: str) -> Optional[Dict]:
         """Scrape Instagram profile data with error handling and retries"""
         username = self.extract_username_from_url(url)
@@ -452,6 +488,9 @@ class SocialMediaScraper:
                     self.instagram_loader.context, username
                 )
 
+                # Extract emails from bio
+                emails = self.extract_emails_from_text(profile.biography)
+
                 profile_data = {
                     "username": profile.username,
                     "full_name": profile.full_name,
@@ -459,6 +498,7 @@ class SocialMediaScraper:
                     "following": profile.followees,
                     "posts": profile.mediacount,
                     "bio": profile.biography,
+                    "emails": emails,  # Add extracted emails
                     "profile_url": f"https://www.instagram.com/{profile.username}/",
                     "type": "instagram",
                     "scraped_at": datetime.utcnow(),
@@ -491,38 +531,116 @@ class SocialMediaScraper:
         return None
 
     def scrape_tiktok_profile(self, url: str) -> Optional[Dict]:
-        """
-        Placeholder for TikTok profile scraping
-        In a real implementation, you would use a TikTok API or web scraping approach
-        """
+        """Scrape TikTok profile data using web scraping"""
         username = self.extract_username_from_url(url)
         if not username:
+            logging.warning(f"Could not extract username from URL: {url}")
             return None
 
-        # Simulate some delay as if we're making a real request
-        self.random_delay()
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                # Set up headers to mimic a real browser
+                headers = {
+                    "User-Agent": random.choice(USER_AGENTS),
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.5",
+                    "Accept-Encoding": "gzip, deflate",
+                    "DNT": "1",
+                    "Connection": "keep-alive",
+                    "Upgrade-Insecure-Requests": "1",
+                }
 
-        # In a real implementation, you would fetch actual TikTok profile data here
-        profile_data = {
-            "username": username,
-            "profile_url": url,
-            "type": "tiktok",
-            "scraped_at": datetime.utcnow(),
-            "followers": random.randint(1000, 100000),  # Placeholder
-            "following": random.randint(10, 1000),  # Placeholder
-            "posts": random.randint(5, 500),  # Placeholder
-        }
+                # Make request to TikTok profile
+                response = requests.get(url, headers=headers, timeout=10)
+                response.raise_for_status()
 
-        logging.info(f"Added TikTok profile: {username}")
-        return profile_data
+                # Parse HTML content
+                soup = BeautifulSoup(response.content, "html.parser")
+
+                # Extract profile information - TikTok's structure may change frequently
+                # This is a common pattern as of current implementation
+                script_tag = soup.find(
+                    "script", id="__UNIVERSAL_DATA_FOR_REHYDRATION__"
+                )
+
+                if not script_tag:
+                    logging.warning(
+                        f"No data found for TikTok profile: {username}"
+                    )
+                    return None
+
+                data = json.loads(script_tag.string)
+
+                # Navigate through the complex JSON structure to find user info
+                # This path might need adjustment if TikTok changes their data structure
+                user_info = (
+                    data.get("__DEFAULT_SCOPE__", {})
+                    .get("webapp.user-detail", {})
+                    .get("userInfo", {})
+                    .get("user", {})
+                )
+
+                if not user_info:
+                    logging.warning(
+                        f"Could not extract user info for: {username}"
+                    )
+                    return None
+
+                # Extract relevant profile data
+                profile_data = {
+                    "username": user_info.get("uniqueId", username),
+                    "full_name": user_info.get("nickname", ""),
+                    "followers": user_info.get("stats", {}).get(
+                        "followerCount", 0
+                    ),
+                    "following": user_info.get("stats", {}).get(
+                        "followingCount", 0
+                    ),
+                    "posts": user_info.get("stats", {}).get("videoCount", 0),
+                    "bio": user_info.get("signature", ""),
+                    "profile_url": f"https://www.tiktok.com/@{user_info.get('uniqueId', username)}",
+                    "type": "tiktok",
+                    "scraped_at": datetime.utcnow(),
+                }
+
+                logging.info(
+                    f"Scraped TikTok profile: {profile_data['username']} ({profile_data['followers']} followers)"
+                )
+                return profile_data
+
+            except requests.exceptions.RequestException as e:
+                logging.warning(
+                    f"Attempt {attempt + 1} failed for TikTok {username}: {e}"
+                )
+                if attempt < max_retries - 1:
+                    time.sleep(FAILURE_DELAY * (attempt + 1))
+                else:
+                    logging.error(
+                        f"All attempts failed for TikTok {username}: {e}"
+                    )
+            except (json.JSONDecodeError, KeyError) as e:
+                logging.warning(
+                    f"Failed to parse TikTok data for {username}: {e}"
+                )
+                return None
+            except Exception as e:
+                logging.warning(
+                    f"Unexpected error scraping TikTok {username}: {e}"
+                )
+                if attempt < max_retries - 1:
+                    time.sleep(FAILURE_DELAY * (attempt + 1))
+                else:
+                    logging.error(
+                        f"All attempts failed for TikTok {username}: {e}"
+                    )
+
+        return None
 
     def scrape_profiles(
         self, platform: str, query: str, max_profiles: int, update_callback=None
     ) -> int:
-        """
-        Main method to scrape profiles for a specific platform
-        Returns the number of profiles successfully scraped
-        """
+        """Main method to scrape profiles for a specific platform"""
         profiles_scraped = 0
         start = 0
 
@@ -530,8 +648,12 @@ class SocialMediaScraper:
         self.db.mark_tag_used(query)
 
         while profiles_scraped < max_profiles:
-            # Fetch URLs from search results
-            urls = self.fetch_serpapi_urls(query, start, platform)
+            # Fetch URLs from search results - use platform-specific method for TikTok
+            if platform == "tiktok":
+                urls = self.fetch_tiktok_serpapi_urls(query, start)
+            else:
+                urls = self.fetch_serpapi_urls(query, start, platform)
+
             if not urls:
                 logging.info(f"No more {platform} results from SerpAPI.")
                 break
