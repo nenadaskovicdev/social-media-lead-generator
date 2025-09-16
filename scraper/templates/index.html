@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Scraping Status</h5>
+                {% if scraping_status.running %}
+                    <span class="badge bg-success status-badge">Running</span>
+                {% else %}
+                    <span class="badge bg-secondary status-badge">Idle</span>
+                {% endif %}
+            </div>
+            <div class="card-body {% if scraping_status.running %}scraping-active{% else %}scraping-inactive{% endif %}">
+                {% if scraping_status.running %}
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <strong>Platform:</strong> {{ scraping_status.platform|title }}<br>
+                            <strong>Query:</strong> {{ scraping_status.current_query }}<br>
+                            <strong>Profiles Scraped:</strong> {{ scraping_status.profiles_scraped }}
+                        </div>
+                        <a href="{{ url_for('stop_scraping') }}" class="btn btn-danger">
+                            <i class="fas fa-stop-circle me-1"></i> Stop Scraping
+                        </a>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                             style="width: {{ (scraping_status.profiles_scraped / MAX_PROFILES) * 100 }}%">
+                        </div>
+                    </div>
+                {% else %}
+                    <p class="mb-0">No active scraping session. Start a new session using the form below.</p>
+                    {% if last_session %}
+                        <div class="mt-3 p-3 bg-light rounded">
+                            <h6>Last Session</h6>
+                            <p class="mb-1"><strong>Platform:</strong> {{ last_session.platform|title }}</p>
+                            <p class="mb-1"><strong>Query:</strong> {{ last_session.query }}</p>
+                            <p class="mb-1"><strong>Profiles Scraped:</strong> {{ last_session.profiles_scraped }}</p>
+                            <p class="mb-0"><strong>Date:</strong> {{ last_session.start_time|string|truncate(16, True, '') }}</p>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Start New Scraping Session</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('start_scraping') }}">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="platform" class="form-label">Platform</label>
+                            <select class="form-select" id="platform" name="platform" required>
+                                <option value="">Select Platform</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="tiktok">TikTok</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="max_profiles" class="form-label">Max Profiles</label>
+                            <input type="number" class="form-control" id="max_profiles" name="max_profiles" value="{{ MAX_PROFILES }}" min="1" max="100">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="query" class="form-label">Search Query</label>
+                        <select class="form-select" id="query" name="query" required>
+                            <option value="">Select a tag or enter custom query</option>
+                            {% for tag in tags %}
+                                <option value="{{ tag.tag }}">{{ tag.tag }} ({{ tag.platform }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="custom_query" class="form-label">Or Enter Custom Query</label>
+                        <input type="text" class="form-control" id="custom_query" placeholder="Enter custom search query">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-play-circle me-1"></i> Start Scraping
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Search Tags</h5>
+                <span class="badge bg-primary rounded-pill">{{ tags|length }}</span>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('add_tag') }}" class="mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="New tag" name="tag" required>
+                        <select class="form-select" style="max-width: 120px;" name="platform" required>
+                            <option value="instagram">Instagram</option>
+                            <option value="tiktok">TikTok</option>
+                        </select>
+                        <button class="btn btn-outline-primary" type="submit">Add</button>
+                    </div>
+                </form>
+                
+                <div class="list-group">
+                    {% for tag in tags %}
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ tag.tag }}</strong>
+                                <br>
+                                <small class="text-muted">{{ tag.platform }} • {{ tag.get('used', false) and 'Used' or 'Not used' }}</small>
+                            </div>
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editTagModal" 
+                                        data-tag="{{ tag.tag }}" data-platform="{{ tag.platform }}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <a href="{{ url_for('delete_tag', tag=tag.tag) }}" class="btn btn-outline-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="text-center text-muted py-3">
+                            No tags yet. Add your first tag above.
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Statistics</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Total Profiles:</span>
+                    <strong>{{ total_profiles }}</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Instagram Profiles:</span>
+                    <strong>{{ profiles|selectattr('type', 'equalto', 'instagram')|list|length }}</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span>TikTok Profiles:</span>
+                    <strong>{{ profiles|selectattr('type', 'equalto', 'tiktok')|list|length }}</strong>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <a href="{{ url_for('export_profiles') }}" class="btn btn-outline-success btn-sm">
+                        <i class="fas fa-download me-1"></i> Export Profiles
+                    </a>
+                    <a href="{{ url_for('profiles') }}" class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-list me-1"></i> View All
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Tag Modal -->
+<div class="modal fade" id="editTagModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Tag</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form method="POST" action="{{ url_for('edit_tag') }}">
+                <div class="modal-body">
+                    <input type="hidden" name="old_tag" id="old_tag">
+                    <div class="mb-3">
+                        <label for="edit_tag_value" class="form-label">Tag</label>
+                        <input type="text" class="form-control" id="edit_tag_value" name="new_tag" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit_platform" class="form-label">Platform</label>
+                        <select class="form-select" id="edit_platform" name="platform" required>
+                            <option value="instagram">Instagram</option>
+                            <option value="tiktok">TikTok</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Handle the edit tag modal
+    var editTagModal = document.getElementById('editTagModal');
+    editTagModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var tag = button.getAttribute('data-tag');
+        var platform = button.getAttribute('data-platform');
+        
+        var modal = this;
+        modal.querySelector('#old_tag').value = tag;
+        modal.querySelector('#edit_tag_value').value = tag;
+        modal.querySelector('#edit_platform').value = platform;
+    });
+
+    // Handle custom query input
+    document.getElementById('query').addEventListener('change', function() {
+        if (this.value) {
+            document.getElementById('custom_query').value = '';
+        }
+    });
+    
+    document.getElementById('custom_query').addEventListener('input', function() {
+        if (this.value) {
+            document.getElementById('query').value = '';
+        }
+    });
+
+    // Auto-refresh status when scraping is active
+    {% if scraping_status.running %}
+    setInterval(function() {
+        fetch("{{ url_for('get_status') }}")
+            .then(response => response.json())
+            .then(data => {
+                if (data.scraping_status.profiles_scraped > {{ scraping_status.profiles_scraped }}) {
+                    location.reload();
+                }
+            });
+    }, 5000);
+    {% endif %}
+</script>
+{% endblock %}

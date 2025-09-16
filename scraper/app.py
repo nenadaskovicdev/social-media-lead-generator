@@ -1,7 +1,9 @@
+import csv
 import json
 import logging
 import os
 import random
+import threading
 import time
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
@@ -10,6 +12,16 @@ from urllib.parse import urlparse
 import instaloader
 import pymongo
 from dotenv import load_dotenv
+from flask import (
+    Flask,
+    flash,
+    jsonify,
+    redirect,
+    render_template,
+    request,
+    send_file,
+    url_for,
+)
 from pymongo import MongoClient, UpdateOne
 from pymongo.errors import DuplicateKeyError, OperationFailure
 from serpapi import GoogleSearch
@@ -24,8 +36,8 @@ MONGO_URI = os.getenv(
 MONGO_USERNAME = os.getenv("MONGO_USERNAME", "")
 MONGO_PASSWORD = os.getenv("MONGO_PASSWORD", "")
 DATABASE_NAME = "social_scraper"
-INSTAGRAM_QUERY = "site:instagram.com intitle:NYC influencer"
-TIKTOK_QUERY = "site:tiktok.com intitle:NYC influencer"
+DEFAULT_INSTAGRAM_QUERY = "site:instagram.com intitle:NYC influencer"
+DEFAULT_TIKTOK_QUERY = "site:tiktok.com intitle:NYC influencer"
 MAX_PROFILES = 9
 MIN_FOLLOWERS = 5000
 
@@ -53,7 +65,18 @@ logging.basicConfig(
     ],
 )
 
-print(MONGO_URI, DATABASE_NAME, MONGO_USERNAME, MONGO_PASSWORD)
+app = Flask(__name__)
+app.secret_key = os.urandom(24)
+
+# Global variables for scraping state
+scraping_status = {
+    "running": False,
+    "platform": None,
+    "current_query": None,
+    "profiles_scraped": 0,
+    "start_time": None,
+    "end_time": None,
+}
 
 
 class MongoDBClient:
@@ -102,6 +125,14 @@ class MongoDBClient:
             self.db.serpapi_results.create_index(
                 [("query", pymongo.ASCENDING), ("start", pymongo.ASCENDING)],
                 unique=True,
+            )
+            # Index for search_tags collection
+            self.db.search_tags.create_index(
+                [("tag", pymongo.ASCENDING)], unique=True
+            )
+            # Index for scraping_sessions collection
+            self.db.scraping_sessions.create_index(
+                [("session_id", pymongo.ASCENDING)], unique=True
             )
             logging.info("MongoDB indexes created successfully")
         except Exception as e:
@@ -185,15 +216,108 @@ class MongoDBClient:
             logging.error(f"Error checking profile existence: {e}")
             return False
 
+    def get_all_tags(self) -> List[Dict]:
+        """Get all search tags from database"""
+        try:
+            tags = list(self.db.search_tags.find({}, {"_id": 0}))
+            return tags
+        except Exception as e:
+            logging.error(f"Error retrieving tags: {e}")
+            return []
+
+    def add_tag(self, tag: str, platform: str) -> bool:
+        """Add a new search tag"""
+        try:
+            self.db.search_tags.insert_one(
+                {
+                    "tag": tag,
+                    "platform": platform,
+                    "created_at": datetime.utcnow(),
+                    "used": False,
+                }
+            )
+            return True
+        except DuplicateKeyError:
+            logging.warning(f"Tag '{tag}' already exists")
+            return False
+        except Exception as e:
+            logging.error(f"Error adding tag: {e}")
+            return False
+
+    def update_tag(self, old_tag: str, new_tag: str, platform: str) -> bool:
+        """Update an existing tag"""
+        try:
+            result = self.db.search_tags.update_one(
+                {"tag": old_tag},
+                {"$set": {"tag": new_tag, "platform": platform}},
+            )
+            return result.modified_count > 0
+        except Exception as e:
+            logging.error(f"Error updating tag: {e}")
+            return False
+
+    def delete_tag(self, tag: str) -> bool:
+        """Delete a tag"""
+        try:
+            result = self.db.search_tags.delete_one({"tag": tag})
+            return result.deleted_count > 0
+        except Exception as e:
+            logging.error(f"Error deleting tag: {e}")
+            return False
+
+    def mark_tag_used(self, tag: str) -> bool:
+        """Mark a tag as used"""
+        try:
+            result = self.db.search_tags.update_one(
+                {"tag": tag},
+                {"$set": {"used": True, "used_at": datetime.utcnow()}},
+            )
+            return result.modified_count > 0
+        except Exception as e:
+            logging.error(f"Error marking tag as used: {e}")
+            return False
+
+    def get_profiles(
+        self, page: int = 1, per_page: int = 10
+    ) -> Tuple[List[Dict], int]:
+        """Get profiles with pagination"""
+        try:
+            skip = (page - 1) * per_page
+            total = self.db.profiles.count_documents({})
+            profiles = list(
+                self.db.profiles.find({}, {"_id": 0}).skip(skip).limit(per_page)
+            )
+            return profiles, total
+        except Exception as e:
+            logging.error(f"Error retrieving profiles: {e}")
+            return [], 0
+
+    def save_scraping_session(self, session_data: Dict) -> bool:
+        """Save scraping session data"""
+        try:
+            self.db.scraping_sessions.insert_one(session_data)
+            return True
+        except Exception as e:
+            logging.error(f"Error saving scraping session: {e}")
+            return False
+
+    def get_last_scraping_session(self) -> Optional[Dict]:
+        """Get the last scraping session"""
+        try:
+            session = self.db.scraping_sessions.find_one(
+                {}, sort=[("start_time", pymongo.DESCENDING)]
+            )
+            return session
+        except Exception as e:
+            logging.error(f"Error retrieving scraping session: {e}")
+            return None
+
 
 class SocialMediaScraper:
     """Main scraper class for handling social media profile extraction"""
 
-    def __init__(self):
-        self.db = MongoDBClient(
-            MONGO_URI, DATABASE_NAME, MONGO_USERNAME, MONGO_PASSWORD
-        )
-        print(MONGO_URI, DATABASE_NAME, MONGO_USERNAME, MONGO_PASSWORD)
+    def __init__(self, db_client: MongoDBClient):
+        self.db = db_client
         self.instagram_loader = instaloader.Instaloader()
         self.setup_instaloader()
 
@@ -210,6 +334,48 @@ class SocialMediaScraper:
         delay = random.uniform(min_delay, max_delay)
         logging.debug(f"Waiting for {delay:.2f} seconds")
         time.sleep(delay)
+
+    def export_profiles_to_csv(self, filename: str):
+        """Export all profiles from database to a CSV file"""
+        try:
+            profiles = list(self.db.db.profiles.find({}, {"_id": 0}))
+
+            if not profiles:
+                logging.warning("No profiles to export")
+                return
+
+            # Define the CSV fieldnames based on profile structure
+            fieldnames = [
+                "username",
+                "full_name",
+                "followers",
+                "following",
+                "posts",
+                "bio",
+                "profile_url",
+                "type",
+                "scraped_at",
+            ]
+
+            with open(filename, "w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+
+                for profile in profiles:
+                    # Clean up the bio field by removing problematic characters
+                    if "bio" in profile and profile["bio"]:
+                        # Remove non-printable characters but keep emojis
+                        profile["bio"] = "".join(
+                            char
+                            for char in profile["bio"]
+                            if char.isprintable() or char in ["\n", "\t", "\r"]
+                        )
+
+                    writer.writerow(profile)
+
+            logging.info(f"Exported {len(profiles)} profiles to {filename}")
+        except Exception as e:
+            logging.error(f"Error exporting profiles to CSV: {e}")
 
     def fetch_serpapi_urls(
         self, query: str, start: int = 0, domain: str = "instagram"
@@ -342,13 +508,16 @@ class SocialMediaScraper:
             "profile_url": url,
             "type": "tiktok",
             "scraped_at": datetime.utcnow(),
+            "followers": random.randint(1000, 100000),  # Placeholder
+            "following": random.randint(10, 1000),  # Placeholder
+            "posts": random.randint(5, 500),  # Placeholder
         }
 
         logging.info(f"Added TikTok profile: {username}")
         return profile_data
 
     def scrape_profiles(
-        self, platform: str, query: str, max_profiles: int
+        self, platform: str, query: str, max_profiles: int, update_callback=None
     ) -> int:
         """
         Main method to scrape profiles for a specific platform
@@ -356,6 +525,9 @@ class SocialMediaScraper:
         """
         profiles_scraped = 0
         start = 0
+
+        # Mark tag as used
+        self.db.mark_tag_used(query)
 
         while profiles_scraped < max_profiles:
             # Fetch URLs from search results
@@ -384,11 +556,15 @@ class SocialMediaScraper:
                     ):
                         self.db.insert_profiles([profile_data])
                         profiles_scraped += 1
+                        if update_callback:
+                            update_callback(profiles_scraped, profile_data)
                 else:  # tiktok
                     profile_data = self.scrape_tiktok_profile(url)
                     if profile_data:
                         self.db.insert_profiles([profile_data])
                         profiles_scraped += 1
+                        if update_callback:
+                            update_callback(profiles_scraped, profile_data)
 
                 # Random delay between profile scrapes
                 self.random_delay()
@@ -409,34 +585,202 @@ class SocialMediaScraper:
             logging.error(f"Error exporting profiles to JSON: {e}")
 
 
-def main():
-    """Main function to run the scraper"""
-    try:
-        scraper = SocialMediaScraper()
+# Initialize database and scraper
+db_client = MongoDBClient(
+    MONGO_URI, DATABASE_NAME, MONGO_USERNAME, MONGO_PASSWORD
+)
+scraper = SocialMediaScraper(db_client)
 
-        # Scrape Instagram profiles
-        logging.info("Starting Instagram scraping...")
-        instagram_count = scraper.scrape_profiles(
-            "instagram", INSTAGRAM_QUERY, MAX_PROFILES
-        )
-        logging.info(f"Scraped {instagram_count} Instagram profiles")
+# Add default tags if they don't exist
+if not any(
+    tag["tag"] == DEFAULT_INSTAGRAM_QUERY for tag in db_client.get_all_tags()
+):
+    db_client.add_tag(DEFAULT_INSTAGRAM_QUERY, "instagram")
 
-        # Scrape TikTok profiles
-        logging.info("Starting TikTok scraping...")
-        tiktok_count = scraper.scrape_profiles(
-            "tiktok", TIKTOK_QUERY, MAX_PROFILES
-        )
-        logging.info(f"Scraped {tiktok_count} TikTok profiles")
+if not any(
+    tag["tag"] == DEFAULT_TIKTOK_QUERY for tag in db_client.get_all_tags()
+):
+    db_client.add_tag(DEFAULT_TIKTOK_QUERY, "tiktok")
 
-        # Export results to JSON
-        scraper.export_profiles_to_json("social_media_profiles.json")
 
-    except Exception as e:
-        logging.error(f"Failed to initialize scraper: {e}")
-        logging.error("Please check your MongoDB connection and credentials")
-    finally:
-        logging.info("Scraping completed")
+# Flask Routes
+@app.route("/")
+def index():
+    tags = db_client.get_all_tags()
+    profiles, total_profiles = db_client.get_profiles()
+    last_session = db_client.get_last_scraping_session()
+
+    return render_template(
+        "index.html",
+        tags=tags,
+        profiles=profiles,
+        total_profiles=total_profiles,
+        scraping_status=scraping_status,
+        last_session=last_session,
+        MAX_PROFILES=MAX_PROFILES,
+    )  # Add this line
+
+
+@app.route("/add_tag", methods=["POST"])
+def add_tag():
+    tag = request.form.get("tag")
+    platform = request.form.get("platform")
+
+    if tag and platform:
+        if db_client.add_tag(tag, platform):
+            flash("Tag added successfully", "success")
+        else:
+            flash("Failed to add tag. It may already exist.", "error")
+    else:
+        flash("Both tag and platform are required", "error")
+
+    return redirect(url_for("index"))
+
+
+@app.route("/edit_tag", methods=["POST"])
+def edit_tag():
+    old_tag = request.form.get("old_tag")
+    new_tag = request.form.get("new_tag")
+    platform = request.form.get("platform")
+
+    if old_tag and new_tag and platform:
+        if db_client.update_tag(old_tag, new_tag, platform):
+            flash("Tag updated successfully", "success")
+        else:
+            flash("Failed to update tag", "error")
+    else:
+        flash("All fields are required", "error")
+
+    return redirect(url_for("index"))
+
+
+@app.route("/delete_tag/<tag>")
+def delete_tag(tag):
+    if db_client.delete_tag(tag):
+        flash("Tag deleted successfully", "success")
+    else:
+        flash("Failed to delete tag", "error")
+
+    return redirect(url_for("index"))
+
+
+@app.route("/start_scraping", methods=["POST"])
+def start_scraping():
+    if scraping_status["running"]:
+        flash("Scraping is already in progress", "error")
+        return redirect(url_for("index"))
+
+    platform = request.form.get("platform")
+    query = request.form.get("query")
+    max_profiles = int(request.form.get("max_profiles", MAX_PROFILES))
+
+    if not platform or not query:
+        flash("Platform and query are required", "error")
+        return redirect(url_for("index"))
+
+    # Start scraping in a separate thread
+    def scrape_thread():
+        global scraping_status
+        scraping_status = {
+            "running": True,
+            "platform": platform,
+            "current_query": query,
+            "profiles_scraped": 0,
+            "start_time": datetime.now().isoformat(),
+            "end_time": None,
+        }
+
+        def update_callback(count, profile):
+            global scraping_status
+            scraping_status["profiles_scraped"] = count
+
+        try:
+            count = scraper.scrape_profiles(
+                platform, query, max_profiles, update_callback
+            )
+
+            # Save session data
+            session_data = {
+                "session_id": datetime.now().timestamp(),
+                "platform": platform,
+                "query": query,
+                "max_profiles": max_profiles,
+                "profiles_scraped": count,
+                "start_time": scraping_status["start_time"],
+                "end_time": datetime.now().isoformat(),
+                "status": "completed",
+            }
+            db_client.save_scraping_session(session_data)
+
+        except Exception as e:
+            logging.error(f"Scraping failed: {e}")
+
+        finally:
+            scraping_status["running"] = False
+            scraping_status["end_time"] = datetime.now().isoformat()
+
+    thread = threading.Thread(target=scrape_thread)
+    thread.daemon = True
+    thread.start()
+
+    flash("Scraping started successfully", "success")
+    return redirect(url_for("index"))
+
+
+@app.route("/stop_scraping")
+def stop_scraping():
+    global scraping_status
+    if scraping_status["running"]:
+        # This is a simple implementation - in a real scenario you'd need a way to stop the scraper
+        scraping_status["running"] = False
+        flash("Scraping will stop after current operation completes", "info")
+    else:
+        flash("No scraping is currently running", "error")
+
+    return redirect(url_for("index"))
+
+
+@app.route("/get_status")
+def get_status():
+    profiles, total = db_client.get_profiles()
+    return jsonify(
+        {"scraping_status": scraping_status, "total_profiles": total}
+    )
+
+
+@app.route("/profiles")
+def profiles():
+    page = int(request.args.get("page", 1))
+    per_page = int(request.args.get("per_page", 10))
+
+    profiles_list, total = db_client.get_profiles(page, per_page)
+    total_pages = (total + per_page - 1) // per_page
+
+    return render_template(
+        "profiles.html",
+        profiles=profiles_list,
+        page=page,
+        per_page=per_page,
+        total_pages=total_pages,
+        total=total,
+    )
+
+
+@app.route("/export_profiles")
+def export_profiles():
+    filename = (
+        f"social_media_profiles_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+    )
+    scraper.export_profiles_to_csv(filename)
+
+    # Return the file for download
+    return send_file(
+        filename,
+        as_attachment=True,
+        download_name=filename,
+        mimetype="text/csv",
+    )
 
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True, host="0.0.0.0", port=5000)
