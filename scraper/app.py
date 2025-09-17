@@ -5,6 +5,8 @@ import os
 import random
 import re
 import threading
+
+# Add more aggressive rate limiting in your scraper
 import time
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
@@ -12,6 +14,8 @@ from urllib.parse import urlparse
 
 import instaloader
 import pymongo
+import requests
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from flask import (
     Flask,
@@ -31,6 +35,7 @@ load_dotenv()
 
 # ---------------- CONFIG ----------------
 SERPAPI_KEY = os.getenv("SERPAPI", "2s7017")
+SERPERAPI_KEY = os.getenv("SERPERAPI", "2s7017")
 MONGO_URI = os.getenv(
     "MONGO_URI", "mongodb://booking:booking@127.0.0.1:27017/scraper"
 )
@@ -42,7 +47,6 @@ DEFAULT_TIKTOK_QUERY = "site:tiktok.com intitle:NYC "
 MAX_PROFILES = 5000
 MIN_FOLLOWERS = 5000
 
-# Delay configuration (in seconds)
 MIN_DELAY = 2
 MAX_DELAY = 5
 SERPAPI_DELAY = 3
@@ -56,6 +60,14 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0",
 ]
 # ----------------------------------------
+
+# Add to your CONFIG section
+DECODO_PROXY_USERNAME = os.getenv("DECODO_PROXY_USERNAME", "")
+DECODO_PROXY_PASSWORD = os.getenv("DECODO_PROXY_PASSWORD", "")
+DECODO_PROXY_GATEWAY = os.getenv("DECODO_PROXY_GATEWAY", "")
+DECODO_PROXY_ENABLED = (
+    os.getenv("DECODO_PROXY_ENABLED", "false").lower() == "true"
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -78,6 +90,46 @@ scraping_status = {
     "start_time": None,
     "end_time": None,
 }
+
+
+class ProxyManager:
+    """Manage Decodo proxy rotation and configuration"""
+
+    def __init__(
+        self, enabled: bool, gateway: str, username: str, password: str
+    ):
+        self.enabled = enabled
+        self.gateway = gateway
+        self.username = username
+        self.password = password
+        self.current_proxy_index = 0
+
+    def get_proxy(self) -> Optional[Dict[str, str]]:
+        """Get a proxy configuration for requests"""
+        if not self.enabled or not self.gateway:
+            return None
+
+        proxy_url = f"http://{self.username}:{self.password}@{self.gateway}"
+        return {
+            "http": proxy_url,
+            "https": proxy_url,
+        }
+
+    def get_proxy_for_instaloader(self) -> Optional[str]:
+        """Get a proxy URL for Instaloader"""
+        if not self.enabled or not self.gateway:
+            return None
+
+        return f"http://{self.username}:{self.password}@{self.gateway}"
+
+
+# Initialize the proxy manager
+proxy_manager = ProxyManager(
+    DECODO_PROXY_ENABLED,
+    DECODO_PROXY_GATEWAY,
+    DECODO_PROXY_USERNAME,
+    DECODO_PROXY_PASSWORD,
+)
 
 
 class MongoDBClient:
@@ -322,11 +374,38 @@ class SocialMediaScraper:
         self.instagram_loader = instaloader.Instaloader()
         self.setup_instaloader()
 
+    def test_proxy_connection(self) -> bool:
+        """Test if the proxy connection is working"""
+        if not proxy_manager.enabled:
+            logging.info("Proxy is not enabled")
+            return True
+
+        test_url = "https://httpbin.org/ip"
+        proxies = proxy_manager.get_proxy()
+
+        try:
+            response = requests.get(test_url, proxies=proxies, timeout=10)
+            response_data = response.json()
+            logging.info(
+                f"Proxy test successful. Your IP is: {response_data.get('origin')}"
+            )
+            return True
+        except Exception as e:
+            print(e)
+            logging.error(f"Proxy test failed: {e}")
+            return False
+
     def setup_instaloader(self):
-        """Configure Instaloader with random user agent for bot evasion"""
+        """Configure Instaloader with random user agent and proxy for bot evasion"""
         random_user_agent = random.choice(USER_AGENTS)
         self.instagram_loader.context.user_agent = random_user_agent
         self.instagram_loader.context.delay_range = [MIN_DELAY, MAX_DELAY]
+
+        # Set up proxy for Instaloader if enabled
+        proxy_url = proxy_manager.get_proxy_for_instaloader()
+        if proxy_url:
+            self.instagram_loader.context.proxy = proxy_url
+            logging.info("Proxy configured for Instaloader")
 
     def random_delay(
         self, min_delay: float = MIN_DELAY, max_delay: float = MAX_DELAY
@@ -335,6 +414,25 @@ class SocialMediaScraper:
         delay = random.uniform(min_delay, max_delay)
         logging.debug(f"Waiting for {delay:.2f} seconds")
         time.sleep(delay)
+
+    def safe_request(self, func, *args, **kwargs):
+        """Wrapper function with exponential backoff"""
+        max_retries = 5
+        base_delay = 30  # Start with 30 seconds
+
+        for attempt in range(max_retries):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                if "401" in str(e) or "wait" in str(e).lower():
+                    delay = base_delay * (2**attempt) + random.uniform(0, 5)
+                    logging.warning(
+                        f"Rate limited. Waiting {delay:.1f} seconds (attempt {attempt + 1})"
+                    )
+                    time.sleep(delay)
+                else:
+                    raise e
+        raise Exception("Max retries exceeded")
 
     def export_profiles_to_csv(self, filename: str):
         """Export all profiles from database to a CSV file"""
@@ -531,7 +629,7 @@ class SocialMediaScraper:
         return None
 
     def scrape_tiktok_profile(self, url: str) -> Optional[Dict]:
-        """Scrape TikTok profile data using web scraping"""
+        """Scrape TikTok profile data using web scraping with proxy support"""
         username = self.extract_username_from_url(url)
         if not username:
             logging.warning(f"Could not extract username from URL: {url}")
@@ -551,26 +649,26 @@ class SocialMediaScraper:
                     "Upgrade-Insecure-Requests": "1",
                 }
 
-                # Make request to TikTok profile
-                response = requests.get(url, headers=headers, timeout=10)
+                # Get proxy configuration
+                proxies = proxy_manager.get_proxy()
+
+                # Make request to TikTok profile with proxy support
+                response = requests.get(
+                    url, headers=headers, timeout=10, proxies=proxies
+                )
                 response.raise_for_status()
 
                 # Parse HTML content
                 soup = BeautifulSoup(response.content, "html.parser")
-
+                print(soup)
                 # Extract profile information - TikTok's structure may change frequently
                 # This is a common pattern as of current implementation
                 script_tag = soup.find(
                     "script", id="__UNIVERSAL_DATA_FOR_REHYDRATION__"
                 )
-
-                if not script_tag:
-                    logging.warning(
-                        f"No data found for TikTok profile: {username}"
-                    )
+                if not script_tag or not script_tag.text:
                     return None
-
-                data = json.loads(script_tag.string)
+                data = json.loads(script_tag.text)
 
                 # Navigate through the complex JSON structure to find user info
                 # This path might need adjustment if TikTok changes their data structure
@@ -580,13 +678,16 @@ class SocialMediaScraper:
                     .get("userInfo", {})
                     .get("user", {})
                 )
-
+                print(user_info)
                 if not user_info:
                     logging.warning(
                         f"Could not extract user info for: {username}"
                     )
                     return None
 
+                emails = self.extract_emails_from_text(
+                    user_info.get("signature", "")
+                )
                 # Extract relevant profile data
                 profile_data = {
                     "username": user_info.get("uniqueId", username),
@@ -597,6 +698,7 @@ class SocialMediaScraper:
                     "following": user_info.get("stats", {}).get(
                         "followingCount", 0
                     ),
+                    "emails": emails,  # Add extracted emails
                     "posts": user_info.get("stats", {}).get("videoCount", 0),
                     "bio": user_info.get("signature", ""),
                     "profile_url": f"https://www.tiktok.com/@{user_info.get('uniqueId', username)}",
@@ -712,6 +814,8 @@ db_client = MongoDBClient(
     MONGO_URI, DATABASE_NAME, MONGO_USERNAME, MONGO_PASSWORD
 )
 scraper = SocialMediaScraper(db_client)
+
+scraper.test_proxy_connection()
 
 # Add default tags if they don't exist
 if not any(
