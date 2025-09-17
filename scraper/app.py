@@ -62,11 +62,14 @@ USER_AGENTS = [
 # ----------------------------------------
 
 # Add to your CONFIG section
-DECODO_PROXY_USERNAME = os.getenv("DECODO_PROXY_USERNAME", "")
-DECODO_PROXY_PASSWORD = os.getenv("DECODO_PROXY_PASSWORD", "")
-DECODO_PROXY_GATEWAY = os.getenv("DECODO_PROXY_GATEWAY", "")
+DECODO_PROXY_USERNAME = os.getenv("DECODO_PROXY_USERNAME", "spjclaqiw1")
+DECODO_PROXY_PASSWORD = os.getenv("DECODO_PROXY_PASSWORD", "kvxda0KrTjNye8+U39")
+DECODO_PROXY_GATEWAY = os.getenv("DECODO_PROXY_GATEWAY", "gate.decodo.com")
+DECODO_PROXY_PORTS = os.getenv(
+    "DECODO_PROXY_PORTS", "10001,10002,10003,10004"
+).split(",")
 DECODO_PROXY_ENABLED = (
-    os.getenv("DECODO_PROXY_ENABLED", "false").lower() == "true"
+    os.getenv("DECODO_PROXY_ENABLED", "true").lower() == "true"
 )
 
 logging.basicConfig(
@@ -96,20 +99,40 @@ class ProxyManager:
     """Manage Decodo proxy rotation and configuration"""
 
     def __init__(
-        self, enabled: bool, gateway: str, username: str, password: str
+        self,
+        enabled: bool,
+        gateway: str,
+        username: str,
+        password: str,
+        ports: List[str] = None,
     ):
         self.enabled = enabled
         self.gateway = gateway
         self.username = username
         self.password = password
+        self.ports = ports or ["10001"]  # Default port if none provided
         self.current_proxy_index = 0
+        self.session_duration = 1800  # 30 minutes session
+        self.last_session_change = time.time()
 
     def get_proxy(self) -> Optional[Dict[str, str]]:
-        """Get a proxy configuration for requests"""
+        """Get a proxy configuration for requests with rotation and session management"""
         if not self.enabled or not self.gateway:
             return None
 
-        proxy_url = f"http://{self.username}:{self.password}@{self.gateway}"
+        # Rotate session every 30 minutes or use port rotation
+        current_time = time.time()
+        if current_time - self.last_session_change > self.session_duration:
+            self.current_proxy_index = (self.current_proxy_index + 1) % len(
+                self.ports
+            )
+            self.last_session_change = current_time
+
+        port = self.ports[self.current_proxy_index]
+        proxy_url = (
+            f"http://{self.username}:{self.password}@{self.gateway}:{port}"
+        )
+
         return {
             "http": proxy_url,
             "https": proxy_url,
@@ -120,7 +143,54 @@ class ProxyManager:
         if not self.enabled or not self.gateway:
             return None
 
-        return f"http://{self.username}:{self.password}@{self.gateway}"
+        port = self.ports[self.current_proxy_index % len(self.ports)]
+        return f"http://{self.username}:{self.password}@{self.gateway}:{port}"
+
+    def test_proxy_connection(self) -> bool:
+        """Test if the proxy connection is working"""
+        if not self.enabled:
+            logging.info("Proxy is not enabled")
+            return True
+
+        test_url = "https://httpbin.org/ip"
+        proxies = self.get_proxy()
+
+        try:
+            headers = {
+                "User-Agent": random.choice(USER_AGENTS),
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.5",
+            }
+
+            response = requests.get(
+                test_url, proxies=proxies, headers=headers, timeout=15
+            )
+            response_data = response.json()
+            logging.info(
+                f"✅ Proxy test successful. Your IP is: {response_data.get('origin')}"
+            )
+            return True
+        except Exception as e:
+            logging.error(f"❌ Proxy test failed: {e}")
+            # Test without proxy to compare
+            try:
+                response = requests.get(test_url, timeout=10)
+                response_data = response.json()
+                logging.info(
+                    f"Direct connection IP: {response_data.get('origin')}"
+                )
+            except:
+                pass
+            return False
+
+    def rotate_proxy(self):
+        """Force rotate to next proxy"""
+        self.current_proxy_index = (self.current_proxy_index + 1) % len(
+            self.ports
+        )
+        logging.info(
+            f"Rotated to proxy port: {self.ports[self.current_proxy_index]}"
+        )
 
 
 # Initialize the proxy manager
@@ -129,6 +199,7 @@ proxy_manager = ProxyManager(
     DECODO_PROXY_GATEWAY,
     DECODO_PROXY_USERNAME,
     DECODO_PROXY_PASSWORD,
+    DECODO_PROXY_PORTS,
 )
 
 
@@ -498,7 +569,7 @@ class SocialMediaScraper:
             ):
                 profile_urls.append(url)
 
-        return profile_urls
+        return urls
 
     def fetch_serpapi_urls(
         self, query: str, start: int = 0, domain: str = "instagram"
@@ -526,6 +597,10 @@ class SocialMediaScraper:
                 "api_key": SERPAPI_KEY,
                 "start": start,
                 "num": 10,  # Number of results per page
+                "location": "New York, United States",
+                "google_domain": "google.com",
+                "gl": "us",
+                "hl": "en",
             }
 
             try:
@@ -573,15 +648,30 @@ class SocialMediaScraper:
         return emails
 
     def scrape_instagram_profile(self, url: str) -> Optional[Dict]:
-        """Scrape Instagram profile data with error handling and retries"""
+        """Scrape Instagram profile data with enhanced proxy handling and retries"""
         username = self.extract_username_from_url(url)
         if not username:
             logging.warning(f"Could not extract username from URL: {url}")
             return None
 
-        max_retries = 3
+        max_retries = 5
         for attempt in range(max_retries):
             try:
+                # Rotate proxy every 2-3 requests to avoid detection
+                if attempt > 0 and attempt % 2 == 0:
+                    proxy_manager.rotate_proxy()
+                    self.setup_instaloader()  # Re-setup instaloader with new proxy
+
+                # Add progressive delays between retries
+                if attempt > 0:
+                    delay = min(
+                        60, 5 * (2**attempt)
+                    )  # Exponential backoff max 60s
+                    logging.info(
+                        f"Waiting {delay} seconds before retry {attempt + 1}"
+                    )
+                    time.sleep(delay + random.uniform(1, 3))
+
                 profile = instaloader.Profile.from_username(
                     self.instagram_loader.context, username
                 )
@@ -596,40 +686,46 @@ class SocialMediaScraper:
                     "following": profile.followees,
                     "posts": profile.mediacount,
                     "bio": profile.biography,
-                    "emails": emails,  # Add extracted emails
+                    "emails": emails,
                     "profile_url": f"https://www.instagram.com/{profile.username}/",
                     "type": "instagram",
                     "scraped_at": datetime.utcnow(),
                 }
 
                 logging.info(
-                    f"Scraped Instagram profile: {profile.username} ({profile.followers} followers)"
+                    f"✅ Successfully scraped Instagram: {profile.username} ({profile.followers} followers)"
                 )
                 return profile_data
 
             except instaloader.exceptions.ProfileNotExistsException:
                 logging.warning(f"Instagram profile does not exist: {username}")
                 return None
-            except instaloader.exceptions.QueryReturnedBadRequestException:
+            except instaloader.exceptions.QueryReturnedBadRequestException as e:
                 logging.warning(
-                    f"Instagram blocked request for {username}, waiting before retry"
+                    f"Instagram blocked request for {username} (attempt {attempt + 1}): {e}"
                 )
-                time.sleep(FAILURE_DELAY * (attempt + 1))
+                # Rotate proxy on block
+                proxy_manager.rotate_proxy()
+                self.setup_instaloader()
+            except instaloader.exceptions.ConnectionException as e:
+                logging.warning(
+                    f"Connection issue for {username} (attempt {attempt + 1}): {e}"
+                )
+                proxy_manager.rotate_proxy()
+                self.setup_instaloader()
             except Exception as e:
                 logging.warning(
                     f"Attempt {attempt + 1} failed for Instagram {username}: {e}"
                 )
-                if attempt < max_retries - 1:
-                    time.sleep(FAILURE_DELAY * (attempt + 1))
-                else:
-                    logging.error(
-                        f"All attempts failed for Instagram {username}: {e}"
-                    )
+                if "401" in str(e) or "wait" in str(e).lower():
+                    proxy_manager.rotate_proxy()
+                    self.setup_instaloader()
 
+        logging.error(f"All attempts failed for Instagram {username}")
         return None
 
     def scrape_tiktok_profile(self, url: str) -> Optional[Dict]:
-        """Scrape TikTok profile data using web scraping with proxy support"""
+        """Scrape TikTok profile data using web scraping with enhanced proxy support"""
         username = self.extract_username_from_url(url)
         if not username:
             logging.warning(f"Could not extract username from URL: {url}")
@@ -647,61 +743,188 @@ class SocialMediaScraper:
                     "DNT": "1",
                     "Connection": "keep-alive",
                     "Upgrade-Insecure-Requests": "1",
+                    "Sec-Fetch-Dest": "document",
+                    "Sec-Fetch-Mode": "navigate",
+                    "Sec-Fetch-Site": "none",
+                    "Sec-Fetch-User": "?1",
                 }
 
                 # Get proxy configuration
                 proxies = proxy_manager.get_proxy()
 
+                # Add delay between requests
+                time.sleep(random.uniform(2, 4))
+
                 # Make request to TikTok profile with proxy support
                 response = requests.get(
-                    url, headers=headers, timeout=10, proxies=proxies
+                    url, headers=headers, timeout=15, proxies=proxies
                 )
                 response.raise_for_status()
 
                 # Parse HTML content
                 soup = BeautifulSoup(response.content, "html.parser")
-                print(soup)
-                # Extract profile information - TikTok's structure may change frequently
-                # This is a common pattern as of current implementation
+
+                # Look for the universal data script tag
                 script_tag = soup.find(
                     "script", id="__UNIVERSAL_DATA_FOR_REHYDRATION__"
                 )
                 if not script_tag or not script_tag.text:
-                    return None
-                data = json.loads(script_tag.text)
-
-                # Navigate through the complex JSON structure to find user info
-                # This path might need adjustment if TikTok changes their data structure
-                user_info = (
-                    data.get("__DEFAULT_SCOPE__", {})
-                    .get("webapp.user-detail", {})
-                    .get("userInfo", {})
-                    .get("user", {})
-                )
-                print(user_info)
-                if not user_info:
                     logging.warning(
-                        f"Could not extract user info for: {username}"
+                        f"No universal data script tag found for: {username}"
                     )
                     return None
 
+                # Parse the JSON data
+                try:
+                    data = json.loads(script_tag.text)
+                except json.JSONDecodeError as e:
+                    logging.warning(
+                        f"Failed to parse JSON data for {username}: {e}"
+                    )
+                    return None
+
+                # Try multiple possible paths to extract user info
+                user_info = None
+
+                # Path 1: Try the new structure (as seen in your HTML)
+                try:
+                    user_info = (
+                        data.get("__DEFAULT_SCOPE__", {})
+                        .get("webapp.user-detail", {})
+                        .get("userInfo", {})
+                        .get("user", {})
+                    )
+                except (KeyError, AttributeError):
+                    pass
+
+                # Path 2: Try alternative structure for profile pages
+                if not user_info:
+                    try:
+                        user_info = (
+                            data.get("__DEFAULT_SCOPE__", {})
+                            .get("webapp.user-detail", {})
+                            .get("user", {})
+                        )
+                    except (KeyError, AttributeError):
+                        pass
+
+                # Path 3: Try another common structure
+                if not user_info:
+                    try:
+                        # Look for user data in other possible locations
+                        for key in data.keys():
+                            if (
+                                "user" in key.lower()
+                                or "profile" in key.lower()
+                            ):
+                                user_info = data[key].get("user", {})
+                                if user_info:
+                                    break
+                    except (KeyError, AttributeError):
+                        pass
+
+                # If we still can't find user info, try extracting from meta tags
+                if not user_info:
+                    user_info = {}
+                    # Extract from meta tags as fallback
+                    meta_tags = soup.find_all("meta")
+                    for meta in meta_tags:
+                        property_attr = meta.get("property", "")
+                        content = meta.get("content", "")
+
+                        if property_attr == "og:title":
+                            # Extract username from title (e.g., "User (@username) on TikTok")
+                            title_parts = content.split("(@")
+                            if len(title_parts) > 1:
+                                user_info["nickname"] = title_parts[0].strip()
+                                user_info["uniqueId"] = (
+                                    title_parts[1].split(")")[0].strip()
+                                )
+                        elif property_attr == "og:description":
+                            user_info["signature"] = content
+
+                # If we still don't have basic info, try to extract from the page
+                if not user_info.get("uniqueId"):
+                    user_info["uniqueId"] = username
+
+                if not user_info.get("nickname"):
+                    # Try to get nickname from title tag
+                    title_tag = soup.find("title")
+                    if title_tag:
+                        title_text = title_tag.text
+                        if "on TikTok" in title_text:
+                            user_info["nickname"] = title_text.split(
+                                "on TikTok"
+                            )[0].strip()
+                        else:
+                            user_info["nickname"] = username
+
+                # Try to extract stats from the page content
+                stats = user_info.get("stats", {})
+
+                # Look for follower count in the HTML
+                follower_text = soup.find(
+                    string=re.compile(r"followers", re.IGNORECASE)
+                )
+                if follower_text:
+                    # Try to find numbers near the follower text
+                    numbers = re.findall(r"[\d,]+", follower_text)
+                    if numbers:
+                        stats["followerCount"] = int(
+                            numbers[0].replace(",", "")
+                        )
+
+                # Look for following count
+                following_text = soup.find(
+                    string=re.compile(r"following", re.IGNORECASE)
+                )
+                if following_text:
+                    numbers = re.findall(r"[\d,]+", following_text)
+                    if numbers:
+                        stats["followingCount"] = int(
+                            numbers[0].replace(",", "")
+                        )
+
+                # Look for post count
+                posts_text = soup.find(
+                    string=re.compile(r"posts|videos", re.IGNORECASE)
+                )
+                if posts_text:
+                    numbers = re.findall(r"[\d,]+", posts_text)
+                    if numbers:
+                        stats["videoCount"] = int(numbers[0].replace(",", ""))
+
+                # Extract bio/signature
+                if "signature" not in user_info:
+                    # Try to find bio in the page
+                    bio_elements = soup.find_all(
+                        ["p", "div"],
+                        class_=re.compile(
+                            r"bio|description|signature", re.IGNORECASE
+                        ),
+                    )
+                    if bio_elements:
+                        user_info["signature"] = bio_elements[0].get_text(
+                            strip=True
+                        )
+                    else:
+                        user_info["signature"] = ""
+
+                # Extract emails from bio
                 emails = self.extract_emails_from_text(
                     user_info.get("signature", "")
                 )
-                # Extract relevant profile data
+
+                # Create profile data with fallback values
                 profile_data = {
                     "username": user_info.get("uniqueId", username),
-                    "full_name": user_info.get("nickname", ""),
-                    "followers": user_info.get("stats", {}).get(
-                        "followerCount", 0
-                    ),
-                    "following": user_info.get("stats", {}).get(
-                        "followingCount", 0
-                    ),
-                    "emails": emails,  # Add extracted emails
-                    "posts": user_info.get("stats", {}).get("videoCount", 0),
+                    "full_name": user_info.get("nickname", username),
+                    "followers": stats.get("followerCount", 0),
+                    "following": stats.get("followingCount", 0),
+                    "emails": emails,
+                    "posts": stats.get("videoCount", 0),
                     "bio": user_info.get("signature", ""),
-                    "profile_url": f"https://www.tiktok.com/@{user_info.get('uniqueId', username)}",
+                    "profile_url": url,
                     "type": "tiktok",
                     "scraped_at": datetime.utcnow(),
                 }
@@ -715,27 +938,26 @@ class SocialMediaScraper:
                 logging.warning(
                     f"Attempt {attempt + 1} failed for TikTok {username}: {e}"
                 )
-                if attempt < max_retries - 1:
-                    time.sleep(FAILURE_DELAY * (attempt + 1))
-                else:
-                    logging.error(
-                        f"All attempts failed for TikTok {username}: {e}"
-                    )
+                # Rotate proxy on failure
+                proxy_manager.rotate_proxy()
+                time.sleep(FAILURE_DELAY * (attempt + 1))
             except (json.JSONDecodeError, KeyError) as e:
                 logging.warning(
                     f"Failed to parse TikTok data for {username}: {e}"
                 )
+                # Try to debug by saving the HTML
+                if attempt == 0:
+                    debug_filename = f"tiktok_debug_{username}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
+                    with open(debug_filename, "w", encoding="utf-8") as f:
+                        f.write(str(soup))
+                    logging.info(f"Saved debug HTML to {debug_filename}")
                 return None
             except Exception as e:
                 logging.warning(
                     f"Unexpected error scraping TikTok {username}: {e}"
                 )
-                if attempt < max_retries - 1:
-                    time.sleep(FAILURE_DELAY * (attempt + 1))
-                else:
-                    logging.error(
-                        f"All attempts failed for TikTok {username}: {e}"
-                    )
+                proxy_manager.rotate_proxy()
+                time.sleep(FAILURE_DELAY * (attempt + 1))
 
         return None
 

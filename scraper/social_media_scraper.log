@@ -13588,3 +13588,887 @@
 2025-09-17 17:45:51,355 - INFO - Scraped Instagram profile: jeanslafayette (39257 followers)
 2025-09-17 17:45:52,828 - INFO - 127.0.0.1 - - [17/Sep/2025 17:45:52] "GET /get_status HTTP/1.1" 200 -
 2025-09-17 17:45:52,836 - INFO - 127.0.0.1 - - [17/Sep/2025 17:45:52] "GET / HTTP/1.1" 200 -
+2025-09-17 17:45:55,154 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:"new york" OR intitle:"nyc" OR inurl:"newyork" OR inurl:"nyc" OR "new york" OR "nyc" OR "#newyork" OR "#nyc" OR "brooklyn" OR "queens" OR "bronx" OR "manhattan" OR "staten island" OR "#brooklyn" OR "#queens" OR "#bronx" OR "#manhattan" OR "#statenisland") (bio OR followers OR following OR email OR contact OR about OR hashtag) (start: 10)
+2025-09-17 17:45:57,153 - INFO - Scraped Instagram profile: govkathyhochul (208343 followers)
+2025-09-17 17:45:57,869 - INFO - 127.0.0.1 - - [17/Sep/2025 17:45:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:45:57,875 - INFO - 127.0.0.1 - - [17/Sep/2025 17:45:57] "GET / HTTP/1.1" 200 -
+2025-09-17 17:46:01,369 - INFO - Profile already exists: https://www.instagram.com/jeanslafayette/
+2025-09-17 17:46:01,370 - INFO - Profile already exists: https://www.instagram.com/saabrooklyn/
+2025-09-17 17:46:01,371 - INFO - Profile already exists: https://www.instagram.com/bridges.nyc/
+2025-09-17 17:46:01,372 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:"new york" OR intitle:"nyc" OR inurl:"newyork" OR inurl:"nyc" OR "new york" OR "nyc" OR "#newyork" OR "#nyc" OR "brooklyn" OR "queens" OR "bronx" OR "manhattan" OR "staten island" OR "#brooklyn" OR "#queens" OR "#bronx" OR "#manhattan" OR "#statenisland") (bio OR followers OR following OR email OR contact OR about OR hashtag) (start: 20)
+2025-09-17 17:46:01,373 - INFO - Profile already exists: https://www.instagram.com/wnytimessquare/
+2025-09-17 17:46:01,374 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:"new york" OR intitle:"nyc" OR inurl:"newyork" OR inurl:"nyc" OR "new york" OR "nyc" OR "#newyork" OR "#nyc" OR "brooklyn" OR "queens" OR "bronx" OR "manhattan" OR "staten island" OR "#brooklyn" OR "#queens" OR "#bronx" OR "#manhattan" OR "#statenisland") (bio OR followers OR following OR email OR contact OR about OR hashtag) (start: 30)
+2025-09-17 17:46:01,374 - INFO - Profile already exists: https://www.instagram.com/wnytimessquare/
+2025-09-17 17:46:01,375 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:"new york" OR intitle:"nyc" OR inurl:"newyork" OR inurl:"nyc" OR "new york" OR "nyc" OR "#newyork" OR "#nyc" OR "brooklyn" OR "queens" OR "bronx" OR "manhattan" OR "staten island" OR "#brooklyn" OR "#queens" OR "#bronx" OR "#manhattan" OR "#statenisland") (bio OR followers OR following OR email OR contact OR about OR hashtag) (start: 40)
+2025-09-17 17:46:01,376 - INFO - No more instagram results from SerpAPI.
+2025-09-17 17:46:02,907 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:02] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:07,907 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:13,169 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:18,170 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:23,170 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:29,134 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:34,133 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:39,134 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:44,139 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:49,139 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:54,139 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:46:59,139 - INFO - 127.0.0.1 - - [17/Sep/2025 17:46:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:04,140 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:09,140 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:14,140 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:14] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:19,140 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:24,140 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:29,142 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:34,141 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:39,141 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:44,738 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:49,742 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:54,985 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:47:59,986 - INFO - 127.0.0.1 - - [17/Sep/2025 17:47:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:04,986 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:09,987 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:15,749 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:15] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:20,782 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:20] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:25,783 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:25] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:30,841 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:30] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:36,118 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:36] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:41,118 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:46,119 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:46] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:51,217 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:48:56,625 - INFO - 127.0.0.1 - - [17/Sep/2025 17:48:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:49:01,625 - INFO - 127.0.0.1 - - [17/Sep/2025 17:49:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:49:06,781 - INFO - 127.0.0.1 - - [17/Sep/2025 17:49:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:49:11,782 - INFO - 127.0.0.1 - - [17/Sep/2025 17:49:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:49:17,750 - INFO - 127.0.0.1 - - [17/Sep/2025 17:49:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 17:53:17,900 - ERROR - MongoDB authentication failed: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2025-09-17 17:53:54,969 - ERROR - MongoDB authentication failed: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}
+2025-09-17 17:54:52,922 - INFO - MongoDB indexes created successfully
+2025-09-17 17:54:52,922 - INFO - Successfully connected to MongoDB
+2025-09-17 17:54:52,923 - INFO - Proxy configured for Instaloader
+2025-09-17 17:54:55,250 - ERROR - Proxy test failed: Expecting value: line 1 column 1 (char 0)
+2025-09-17 17:54:55,792 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.54.93.234:5000
+2025-09-17 17:54:55,792 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-17 17:54:55,793 - INFO -  * Restarting with stat
+2025-09-17 17:54:59,633 - INFO - MongoDB indexes created successfully
+2025-09-17 17:54:59,633 - INFO - Successfully connected to MongoDB
+2025-09-17 17:54:59,633 - INFO - Proxy configured for Instaloader
+2025-09-17 17:55:01,852 - ERROR - Proxy test failed: Expecting value: line 1 column 1 (char 0)
+2025-09-17 17:55:02,125 - WARNING -  * Debugger is active!
+2025-09-17 17:55:02,125 - INFO -  * Debugger PIN: 983-422-525
+2025-09-17 17:55:56,265 - INFO - 127.0.0.1 - - [17/Sep/2025 17:55:56] "GET / HTTP/1.1" 200 -
+2025-09-17 18:02:14,311 - INFO - MongoDB indexes created successfully
+2025-09-17 18:02:14,311 - INFO - Successfully connected to MongoDB
+2025-09-17 18:02:14,311 - INFO - Proxy configured for Instaloader
+2025-09-17 18:02:20,830 - INFO - Proxy test successful. Your IP is: 156.193.228.105
+2025-09-17 18:02:21,089 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.54.93.234:5000
+2025-09-17 18:02:21,089 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-17 18:02:21,090 - INFO -  * Restarting with stat
+2025-09-17 18:02:26,379 - INFO - MongoDB indexes created successfully
+2025-09-17 18:02:26,379 - INFO - Successfully connected to MongoDB
+2025-09-17 18:02:26,380 - INFO - Proxy configured for Instaloader
+2025-09-17 18:02:35,936 - INFO - Proxy test successful. Your IP is: 156.193.228.105
+2025-09-17 18:02:36,197 - WARNING -  * Debugger is active!
+2025-09-17 18:02:36,206 - INFO -  * Debugger PIN: 983-422-525
+2025-09-17 18:04:16,953 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:16] "[32mPOST /edit_tag HTTP/1.1[0m" 302 -
+2025-09-17 18:04:17,508 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:17] "GET / HTTP/1.1" 200 -
+2025-09-17 18:04:19,579 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:19] "GET / HTTP/1.1" 200 -
+2025-09-17 18:04:20,386 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-17 18:04:28,761 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:28] "[32mPOST /start_scraping HTTP/1.1[0m" 302 -
+2025-09-17 18:04:29,041 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 0)
+2025-09-17 18:04:30,565 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:30] "GET / HTTP/1.1" 200 -
+2025-09-17 18:04:35,918 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:35] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:04:37,754 - INFO - Scraped Instagram profile: brooklyn (26252 followers)
+2025-09-17 18:04:40,934 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:40] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:04:41,650 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:41] "GET / HTTP/1.1" 200 -
+2025-09-17 18:04:45,308 - INFO - Scraped Instagram profile: brooklyn_bourque (6362 followers)
+2025-09-17 18:04:47,065 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:04:47,663 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:47] "GET / HTTP/1.1" 200 -
+2025-09-17 18:04:51,276 - INFO - Scraped Instagram profile: brooklynkohl (6665 followers)
+2025-09-17 18:04:53,010 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:04:53,525 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:53] "GET / HTTP/1.1" 200 -
+2025-09-17 18:04:59,226 - INFO - 127.0.0.1 - - [17/Sep/2025 18:04:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:00,271 - INFO - Scraped Instagram profile: officially_brooklync (3173 followers)
+2025-09-17 18:05:04,125 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:04,425 - INFO - Scraped Instagram profile: nyc (890363 followers)
+2025-09-17 18:05:09,243 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:09,769 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:09] "GET / HTTP/1.1" 200 -
+2025-09-17 18:05:15,143 - INFO - Scraped Instagram profile: blvckmvnivc (237746 followers)
+2025-09-17 18:05:15,270 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:15] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:20,956 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:20] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:22,340 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:22] "GET / HTTP/1.1" 200 -
+2025-09-17 18:05:27,755 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:30,679 - INFO - Scraped Instagram profile: queensbprichards (7606 followers)
+2025-09-17 18:05:32,730 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:33,218 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:33] "GET / HTTP/1.1" 200 -
+2025-09-17 18:05:38,801 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:41,665 - INFO - Scraped Instagram profile: brooklynkarasack (293922 followers)
+2025-09-17 18:05:43,858 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:44,385 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:44] "GET / HTTP/1.1" 200 -
+2025-09-17 18:05:49,130 - INFO - Scraped Instagram profile: brooklynjazz.805 (7963 followers)
+2025-09-17 18:05:50,047 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:50] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:05:50,581 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:50] "GET / HTTP/1.1" 200 -
+2025-09-17 18:05:51,901 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 10)
+2025-09-17 18:05:55,981 - INFO - 127.0.0.1 - - [17/Sep/2025 18:05:55] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:01,610 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:01,934 - INFO - Scraped Instagram profile: 4am__nyc (8208 followers)
+2025-09-17 18:06:04,906 - INFO - Profile already exists: https://www.instagram.com/brooklynkarasack/
+2025-09-17 18:06:06,473 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:07,104 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:07] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:07,204 - INFO - Scraped Instagram profile: brooklyn_mcdougall (18812 followers)
+2025-09-17 18:06:12,557 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:13,189 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:13] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:14,941 - INFO - Scraped Instagram profile: gigi.nyc (82341 followers)
+2025-09-17 18:06:18,663 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:19,288 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:19] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:22,694 - INFO - Scraped Instagram profile: dirtqueennyc (11111 followers)
+2025-09-17 18:06:24,846 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:25,374 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:25] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:27,097 - INFO - Scraped Instagram profile: brooklyndecker (723242 followers)
+2025-09-17 18:06:30,936 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:30] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:31,438 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:31] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:35,048 - INFO - Scraped Instagram profile: lovingthebronx (14800 followers)
+2025-09-17 18:06:37,023 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:37] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:38,267 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:38] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:41,028 - INFO - Scraped Instagram profile: reachnyc (1848 followers)
+2025-09-17 18:06:43,587 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:48,744 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:48,966 - INFO - Scraped Instagram profile: lev.nyc (50612 followers)
+2025-09-17 18:06:54,305 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:06:54,807 - INFO - 127.0.0.1 - - [17/Sep/2025 18:06:54] "GET / HTTP/1.1" 200 -
+2025-09-17 18:06:56,429 - INFO - Scraped Instagram profile: nycmayorsoffice (130806 followers)
+2025-09-17 18:07:00,443 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:00] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:01,180 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 20)
+2025-09-17 18:07:01,673 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:01] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:07,347 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:09,638 - INFO - Scraped Instagram profile: printempsnewyork (67609 followers)
+2025-09-17 18:07:12,307 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:13,379 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:13] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:18,923 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:19,297 - INFO - Scraped Instagram profile: brooklyndeleye0117 (6706 followers)
+2025-09-17 18:07:23,927 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:24,425 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:24] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:27,501 - INFO - Scraped Instagram profile: bronxgirlsskate (7060 followers)
+2025-09-17 18:07:30,054 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:30] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:30,566 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:30] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:32,963 - INFO - Scraped Instagram profile: townofwny (7907 followers)
+2025-09-17 18:07:36,307 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:36] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:36,896 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:36] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:40,150 - INFO - Scraped Instagram profile: brooklyntrackclub (21932 followers)
+2025-09-17 18:07:42,312 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:42] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:42,817 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:42] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:46,612 - INFO - Scraped Instagram profile: reachnyc (1848 followers)
+2025-09-17 18:07:48,320 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:53,341 - INFO - Scraped Instagram profile: brooklynrootsitalian (17082 followers)
+2025-09-17 18:07:53,565 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:07:54,074 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:54] "GET / HTTP/1.1" 200 -
+2025-09-17 18:07:59,102 - INFO - Scraped Instagram profile: imdonut.nyc (19249 followers)
+2025-09-17 18:07:59,780 - INFO - 127.0.0.1 - - [17/Sep/2025 18:07:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:00,292 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:00] "GET / HTTP/1.1" 200 -
+2025-09-17 18:08:05,729 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:05] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:06,644 - INFO - Scraped Instagram profile: bxdrafthouse (8567 followers)
+2025-09-17 18:08:10,440 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 30)
+2025-09-17 18:08:11,036 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:11,541 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:11] "GET / HTTP/1.1" 200 -
+2025-09-17 18:08:16,847 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:16] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:18,686 - INFO - Profile already exists: https://www.instagram.com/brooklyndeleye0117/
+2025-09-17 18:08:21,848 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:21] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:23,012 - INFO - Scraped Instagram profile: brooklyncurryproject (17982 followers)
+2025-09-17 18:08:27,096 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:27,702 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:27] "GET / HTTP/1.1" 200 -
+2025-09-17 18:08:28,805 - INFO - Scraped Instagram profile: innsidenewyork (22203 followers)
+2025-09-17 18:08:32,995 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:33,494 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:33] "GET / HTTP/1.1" 200 -
+2025-09-17 18:08:33,529 - INFO - Profile already exists: https://www.instagram.com/bronxgirlsskate/
+2025-09-17 18:08:33,647 - INFO - Profile already exists: https://www.instagram.com/brooklyntrackclub/
+2025-09-17 18:08:33,792 - INFO - Profile already exists: https://www.instagram.com/bxdrafthouse/
+2025-09-17 18:08:33,909 - INFO - Profile already exists: https://www.instagram.com/imdonut.nyc/
+2025-09-17 18:08:37,847 - INFO - Scraped Instagram profile: bridges.nyc (19298 followers)
+2025-09-17 18:08:38,790 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:39,342 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:39] "GET / HTTP/1.1" 200 -
+2025-09-17 18:08:44,756 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:45,389 - INFO - Scraped Instagram profile: homecookingny (2994 followers)
+2025-09-17 18:08:49,719 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:51,238 - INFO - Scraped Instagram profile: no.standing.nyc (29866 followers)
+2025-09-17 18:08:54,733 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:08:55,092 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 40)
+2025-09-17 18:08:55,231 - INFO - 127.0.0.1 - - [17/Sep/2025 18:08:55] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:01,393 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:03,128 - INFO - Scraped Instagram profile: peachez.nyc (9795 followers)
+2025-09-17 18:09:05,742 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:05] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:06,281 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:06] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:10,106 - INFO - Scraped Instagram profile: fsnewyork (75833 followers)
+2025-09-17 18:09:11,682 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:12,226 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:12] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:15,268 - INFO - Scraped Instagram profile: postnewyork (4322 followers)
+2025-09-17 18:09:17,970 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:22,790 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:22] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:24,439 - INFO - Scraped Instagram profile: eavesdrop.nyc (41317 followers)
+2025-09-17 18:09:27,667 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:28,250 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:28] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:29,315 - INFO - Scraped Instagram profile: reachnyc (1848 followers)
+2025-09-17 18:09:33,634 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:37,423 - INFO - Scraped Instagram profile: blackownedbklyn (124384 followers)
+2025-09-17 18:09:39,735 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:40,231 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:40] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:41,855 - INFO - Profile already exists: https://www.instagram.com/brooklyndeleye0117/
+2025-09-17 18:09:44,743 - INFO - Scraped Instagram profile: dinersofnyc (11748 followers)
+2025-09-17 18:09:45,539 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:45] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:46,041 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:46] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:51,194 - INFO - Scraped Instagram profile: nyrcwomen (6434 followers)
+2025-09-17 18:09:51,327 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:51,959 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:51] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:56,179 - INFO - Scraped Instagram profile: birchhoboken (29716 followers)
+2025-09-17 18:09:57,587 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:09:58,850 - INFO - 127.0.0.1 - - [17/Sep/2025 18:09:58] "GET / HTTP/1.1" 200 -
+2025-09-17 18:09:59,971 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 50)
+2025-09-17 18:10:04,252 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:09,231 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:09,232 - INFO - Scraped Instagram profile: bklynmavens (80427 followers)
+2025-09-17 18:10:11,621 - INFO - Profile already exists: https://www.instagram.com/lovingthebronx/
+2025-09-17 18:10:14,274 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:14] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:14,780 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:14] "GET / HTTP/1.1" 200 -
+2025-09-17 18:10:15,377 - INFO - Scraped Instagram profile: second.nyc (10171 followers)
+2025-09-17 18:10:20,132 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:20] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:20,992 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:20] "GET / HTTP/1.1" 200 -
+2025-09-17 18:10:26,516 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:26] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:31,295 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:31] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:33,000 - INFO - Scraped Instagram profile: lucia.newyork (41082 followers)
+2025-09-17 18:10:36,379 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:36] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:37,263 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:37] "GET / HTTP/1.1" 200 -
+2025-09-17 18:10:39,923 - INFO - Scraped Instagram profile: fouquets.newyork (103960 followers)
+2025-09-17 18:10:42,566 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:42] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:43,067 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:43] "GET / HTTP/1.1" 200 -
+2025-09-17 18:10:45,134 - INFO - Profile already exists: https://www.instagram.com/innsidenewyork/
+2025-09-17 18:10:48,377 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:49,019 - INFO - Scraped Instagram profile: niks.nyc (58208 followers)
+2025-09-17 18:10:53,783 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:10:54,049 - INFO - Scraped Instagram profile: bkstreetart (117108 followers)
+2025-09-17 18:10:54,279 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:54] "GET / HTTP/1.1" 200 -
+2025-09-17 18:10:59,721 - INFO - 127.0.0.1 - - [17/Sep/2025 18:10:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:03,642 - INFO - Scraped Instagram profile: juliej.nyc (30670 followers)
+2025-09-17 18:11:04,653 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:05,179 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:05] "GET / HTTP/1.1" 200 -
+2025-09-17 18:11:10,834 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:10] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:11,406 - INFO - Scraped Instagram profile: montestrattoria (5160 followers)
+2025-09-17 18:11:15,162 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 60)
+2025-09-17 18:11:15,571 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:15] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:16,147 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:16] "GET / HTTP/1.1" 200 -
+2025-09-17 18:11:21,684 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:21] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:24,319 - INFO - Scraped Instagram profile: brooklynbloomsnyc (16868 followers)
+2025-09-17 18:11:26,633 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:26] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:27,136 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:27] "GET / HTTP/1.1" 200 -
+2025-09-17 18:11:30,910 - INFO - Scraped Instagram profile: richhomiebrooklyn (9039 followers)
+2025-09-17 18:11:32,428 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:32,925 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:32] "GET / HTTP/1.1" 200 -
+2025-09-17 18:11:38,408 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:40,362 - INFO - Scraped Instagram profile: warkopnyc (19241 followers)
+2025-09-17 18:11:43,396 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:43,897 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:43] "GET / HTTP/1.1" 200 -
+2025-09-17 18:11:46,977 - INFO - Scraped Instagram profile: brassqueensnyc (17087 followers)
+2025-09-17 18:11:49,266 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:49,768 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:49] "GET / HTTP/1.1" 200 -
+2025-09-17 18:11:52,803 - INFO - Scraped Instagram profile: stregisnewyork (101705 followers)
+2025-09-17 18:11:55,059 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:55] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:11:55,633 - INFO - 127.0.0.1 - - [17/Sep/2025 18:11:55] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:00,736 - INFO - Scraped Instagram profile: nyctheteam (4634 followers)
+2025-09-17 18:12:01,416 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:06,714 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:10,462 - INFO - Scraped Instagram profile: bronxnightmarket (55053 followers)
+2025-09-17 18:12:11,378 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:11,889 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:11] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:13,272 - INFO - Profile already exists: https://www.instagram.com/brooklyncurryproject/
+2025-09-17 18:12:13,400 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 70)
+2025-09-17 18:12:17,167 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:19,820 - INFO - Profile already exists: https://www.instagram.com/fouquets.newyork/
+2025-09-17 18:12:19,942 - INFO - Profile already exists: https://www.instagram.com/stregisnewyork/
+2025-09-17 18:12:22,223 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:22] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:22,516 - INFO - Scraped Instagram profile: brooklyndumplingshop (47955 followers)
+2025-09-17 18:12:27,290 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:27,790 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:27] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:29,796 - INFO - Scraped Instagram profile: brooklynbridgepark (146839 followers)
+2025-09-17 18:12:33,181 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:33,500 - INFO - Profile already exists: https://www.instagram.com/montestrattoria/
+2025-09-17 18:12:33,627 - INFO - Profile already exists: https://www.instagram.com/juliej.nyc/
+2025-09-17 18:12:33,683 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:33] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:36,461 - INFO - Scraped Instagram profile: nytmag (557007 followers)
+2025-09-17 18:12:39,244 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:39,995 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:39] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:44,277 - INFO - Scraped Instagram profile: chambers.nyc (15172 followers)
+2025-09-17 18:12:45,390 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:45] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:45,884 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:45] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:50,111 - INFO - Scraped Instagram profile: superioringredients (45770 followers)
+2025-09-17 18:12:51,277 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:51,795 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:51] "GET / HTTP/1.1" 200 -
+2025-09-17 18:12:57,092 - INFO - 127.0.0.1 - - [17/Sep/2025 18:12:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:12:57,719 - INFO - Scraped Instagram profile: nyctheteam (4634 followers)
+2025-09-17 18:13:01,635 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 80)
+2025-09-17 18:13:02,371 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:02] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:07,412 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:12,390 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:13,626 - INFO - Scraped Instagram profile: cecinewyork (101623 followers)
+2025-09-17 18:13:17,376 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:18,288 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:18] "GET / HTTP/1.1" 200 -
+2025-09-17 18:13:19,627 - INFO - Scraped Instagram profile: keithhernandez.nyc (163091 followers)
+2025-09-17 18:13:23,159 - INFO - Profile already exists: https://www.instagram.com/bklynmavens/
+2025-09-17 18:13:23,581 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:23,636 - INFO - Profile already exists: https://www.instagram.com/nytmag/
+2025-09-17 18:13:24,073 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:24] "GET / HTTP/1.1" 200 -
+2025-09-17 18:13:28,302 - INFO - Scraped Instagram profile: starterpacksofnyc (67202 followers)
+2025-09-17 18:13:29,345 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:29,854 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:29] "GET / HTTP/1.1" 200 -
+2025-09-17 18:13:32,924 - INFO - Profile already exists: https://www.instagram.com/second.nyc/
+2025-09-17 18:13:33,053 - INFO - Profile already exists: https://www.instagram.com/stregisnewyork/
+2025-09-17 18:13:33,510 - INFO - Profile already exists: https://www.instagram.com/fouquets.newyork/
+2025-09-17 18:13:33,635 - INFO - Profile already exists: https://www.instagram.com/bkstreetart/
+2025-09-17 18:13:33,759 - INFO - Profile already exists: https://www.instagram.com/brooklyndumplingshop/
+2025-09-17 18:13:33,882 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 90)
+2025-09-17 18:13:35,127 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:35] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:40,147 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:40] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:45,393 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:45] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:48,007 - INFO - Scraped Instagram profile: nyuniversity (589344 followers)
+2025-09-17 18:13:50,930 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:50] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:51,566 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:51] "GET / HTTP/1.1" 200 -
+2025-09-17 18:13:56,883 - INFO - 127.0.0.1 - - [17/Sep/2025 18:13:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:13:57,286 - INFO - Scraped Instagram profile: bkflea (147255 followers)
+2025-09-17 18:14:01,951 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:02,453 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:02] "GET / HTTP/1.1" 200 -
+2025-09-17 18:14:04,108 - INFO - Scraped Instagram profile: sauced.nyc (2053 followers)
+2025-09-17 18:14:07,731 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:10,354 - INFO - Scraped Instagram profile: brooklynbotanic (191610 followers)
+2025-09-17 18:14:12,744 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:13,246 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:13] "GET / HTTP/1.1" 200 -
+2025-09-17 18:14:14,766 - INFO - Scraped Instagram profile: brooklynperkcoffee (3750 followers)
+2025-09-17 18:14:18,649 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:20,718 - INFO - Scraped Instagram profile: breadivorebakery (3621 followers)
+2025-09-17 18:14:24,006 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:26,064 - INFO - Scraped Instagram profile: benoitny (18080 followers)
+2025-09-17 18:14:28,931 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:28] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:29,425 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:29] "GET / HTTP/1.1" 200 -
+2025-09-17 18:14:31,901 - INFO - Scraped Instagram profile: mayisha.nyc (60047 followers)
+2025-09-17 18:14:34,905 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:35,464 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:35] "GET / HTTP/1.1" 200 -
+2025-09-17 18:14:38,638 - INFO - Scraped Instagram profile: nycparks (269492 followers)
+2025-09-17 18:14:41,057 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:41,650 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:41] "GET / HTTP/1.1" 200 -
+2025-09-17 18:14:43,105 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 100)
+2025-09-17 18:14:47,042 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:50,762 - INFO - Profile already exists: https://www.instagram.com/brooklynbotanic/
+2025-09-17 18:14:50,885 - INFO - Profile already exists: https://www.instagram.com/lucia.newyork/
+2025-09-17 18:14:52,630 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:52] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:55,705 - INFO - Scraped Instagram profile: brooklynperkcoffee (3750 followers)
+2025-09-17 18:14:57,613 - INFO - 127.0.0.1 - - [17/Sep/2025 18:14:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:14:59,928 - INFO - Scraped Instagram profile: breadivorebakery (3621 followers)
+2025-09-17 18:15:02,884 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:02] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:07,624 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:07,915 - INFO - Scraped Instagram profile: wardrobe.nyc (282822 followers)
+2025-09-17 18:15:12,603 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:13,097 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:13] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:14,666 - INFO - Scraped Instagram profile: boogiedownbronxrunners (11455 followers)
+2025-09-17 18:15:18,393 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:18,922 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:18] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:21,800 - INFO - Scraped Instagram profile: thebronxbrewery (59029 followers)
+2025-09-17 18:15:24,244 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:24,754 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:24] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:28,107 - INFO - Scraped Instagram profile: newyorkpilates (156234 followers)
+2025-09-17 18:15:30,039 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:30] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:30,550 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:30] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:33,320 - INFO - Scraped Instagram profile: brooklyncharm (55406 followers)
+2025-09-17 18:15:35,837 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:35] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:36,332 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:36] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:40,057 - INFO - Scraped Instagram profile: sosarapnyc (22956 followers)
+2025-09-17 18:15:41,628 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:42,203 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:42] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:42,843 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 110)
+2025-09-17 18:15:47,499 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:52,368 - INFO - Scraped Instagram profile: pier57.nyc (51773 followers)
+2025-09-17 18:15:52,788 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:52] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:53,326 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:53] "GET / HTTP/1.1" 200 -
+2025-09-17 18:15:58,594 - INFO - 127.0.0.1 - - [17/Sep/2025 18:15:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:15:59,411 - INFO - Scraped Instagram profile: mayanewyorkcity (11738 followers)
+2025-09-17 18:16:03,630 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:03] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:04,123 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:04] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:07,003 - INFO - Scraped Instagram profile: nyliberty (403095 followers)
+2025-09-17 18:16:09,525 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:10,137 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:10] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:13,157 - INFO - Scraped Instagram profile: dantenewyorkcity (127856 followers)
+2025-09-17 18:16:15,556 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:15] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:16,971 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:16] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:20,636 - INFO - Scraped Instagram profile: almosttripletsnyc (303791 followers)
+2025-09-17 18:16:23,407 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:24,189 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:24] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:27,725 - INFO - Scraped Instagram profile: colbo.nyc (45930 followers)
+2025-09-17 18:16:29,546 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:30,103 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:30] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:32,857 - INFO - Scraped Instagram profile: consignmentbrooklyn (19225 followers)
+2025-09-17 18:16:35,387 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:35] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:35,910 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:35] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:39,585 - INFO - Scraped Instagram profile: radiofreebk (7706 followers)
+2025-09-17 18:16:41,197 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:41,703 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:41] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:44,961 - INFO - Scraped Instagram profile: nycferry (98537 followers)
+2025-09-17 18:16:47,270 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:47,771 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:47] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:50,665 - INFO - Scraped Instagram profile: peggyeats (13140 followers)
+2025-09-17 18:16:53,216 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:16:53,718 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:53] "GET / HTTP/1.1" 200 -
+2025-09-17 18:16:55,129 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 120)
+2025-09-17 18:16:59,105 - INFO - 127.0.0.1 - - [17/Sep/2025 18:16:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:04,225 - INFO - Scraped Instagram profile: brooklynbreakfastshop (9739 followers)
+2025-09-17 18:17:04,863 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:05,364 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:05] "GET / HTTP/1.1" 200 -
+2025-09-17 18:17:08,448 - INFO - Scraped Instagram profile: doors.nyc (19517 followers)
+2025-09-17 18:17:10,755 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:10] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:12,184 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:12] "GET / HTTP/1.1" 200 -
+2025-09-17 18:17:15,889 - INFO - Scraped Instagram profile: queensnightmarket (82955 followers)
+2025-09-17 18:17:17,767 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:18,284 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:18] "GET / HTTP/1.1" 200 -
+2025-09-17 18:17:23,862 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:25,200 - INFO - Scraped Instagram profile: awakenewyorkclothing (250671 followers)
+2025-09-17 18:17:29,134 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:29,626 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:29] "GET / HTTP/1.1" 200 -
+2025-09-17 18:17:29,644 - INFO - Scraped Instagram profile: brooklyn_lanham_ (1518 followers)
+2025-09-17 18:17:33,387 - INFO - Profile already exists: https://www.instagram.com/bronxnightmarket/
+2025-09-17 18:17:33,512 - INFO - Profile already exists: https://www.instagram.com/brooklyntrackclub/
+2025-09-17 18:17:34,910 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:37,013 - INFO - Scraped Instagram profile: coolstuff.nyc (36961 followers)
+2025-09-17 18:17:40,252 - INFO - Profile already exists: https://www.instagram.com/brooklynbotanic/
+2025-09-17 18:17:40,604 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:40] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:41,339 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:41] "GET / HTTP/1.1" 200 -
+2025-09-17 18:17:43,524 - INFO - Scraped Instagram profile: mussabalijc (45533 followers)
+2025-09-17 18:17:46,642 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:46] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:47,204 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:47] "GET / HTTP/1.1" 200 -
+2025-09-17 18:17:47,414 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 130)
+2025-09-17 18:17:52,597 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:52] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:58,124 - INFO - Scraped Instagram profile: fxdlsbrooklyn (43662 followers)
+2025-09-17 18:17:58,501 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:17:59,540 - INFO - 127.0.0.1 - - [17/Sep/2025 18:17:59] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:02,977 - INFO - Profile already exists: https://www.instagram.com/nyliberty/
+2025-09-17 18:18:04,832 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:07,106 - INFO - Scraped Instagram profile: brooklynallman (12264 followers)
+2025-09-17 18:18:09,871 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:10,403 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:10] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:10,966 - INFO - Profile already exists: https://www.instagram.com/dantenewyorkcity/
+2025-09-17 18:18:16,003 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:16] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:17,179 - INFO - Scraped Instagram profile: brooklynchophouse (107864 followers)
+2025-09-17 18:18:21,017 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:21] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:21,556 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:21] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:22,768 - INFO - Scraped Instagram profile: nymag (2339029 followers)
+2025-09-17 18:18:26,842 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:26] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:27,690 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:27] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:30,328 - INFO - Scraped Instagram profile: nyc_looks (74778 followers)
+2025-09-17 18:18:32,965 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:33,468 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:33] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:39,241 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:40,824 - INFO - Scraped Instagram profile: skatebrooklyn (5975 followers)
+2025-09-17 18:18:44,258 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:44,756 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:44] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:46,071 - INFO - Scraped Instagram profile: barneysny (2594608 followers)
+2025-09-17 18:18:48,480 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 140)
+2025-09-17 18:18:50,042 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:50] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:50,555 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:50] "GET / HTTP/1.1" 200 -
+2025-09-17 18:18:55,833 - INFO - 127.0.0.1 - - [17/Sep/2025 18:18:55] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:18:57,312 - INFO - Scraped Instagram profile: humansofny (12849147 followers)
+2025-09-17 18:19:01,156 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:02,137 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:02] "GET / HTTP/1.1" 200 -
+2025-09-17 18:19:03,380 - INFO - Scraped Instagram profile: fionac.nyc (8740 followers)
+2025-09-17 18:19:07,717 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:08,219 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:08] "GET / HTTP/1.1" 200 -
+2025-09-17 18:19:12,003 - INFO - Scraped Instagram profile: mbronxmusic (43576 followers)
+2025-09-17 18:19:13,528 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:14,150 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:14] "GET / HTTP/1.1" 200 -
+2025-09-17 18:19:18,911 - INFO - Scraped Instagram profile: bypensa_ (7282 followers)
+2025-09-17 18:19:19,441 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:19,954 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:19] "GET / HTTP/1.1" 200 -
+2025-09-17 18:19:22,874 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 150)
+2025-09-17 18:19:25,396 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:25] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:29,670 - INFO - Profile already exists: https://www.instagram.com/fionac.nyc/
+2025-09-17 18:19:30,323 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:30] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:34,839 - INFO - Scraped Instagram profile: yerr.nyc (718908 followers)
+2025-09-17 18:19:35,718 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:35] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:36,234 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:36] "GET / HTTP/1.1" 200 -
+2025-09-17 18:19:39,368 - INFO - Fetching SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 160)
+2025-09-17 18:19:41,608 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:46,628 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:46] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:46,947 - INFO - No more instagram results from SerpAPI.
+2025-09-17 18:19:51,872 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:19:57,558 - INFO - 127.0.0.1 - - [17/Sep/2025 18:19:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:01,991 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:07,261 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:12,257 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:17,289 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:22,290 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:22] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:27,318 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:32,655 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:37,337 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:37] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:42,610 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:42] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:47,709 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:52,585 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:52] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:20:57,591 - INFO - 127.0.0.1 - - [17/Sep/2025 18:20:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:02,896 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:02] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:07,638 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:12,595 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:17,621 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:22,937 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:22] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:27,946 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:32,942 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:38,408 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:42,976 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:42] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:47,948 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:53,489 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:21:58,521 - INFO - 127.0.0.1 - - [17/Sep/2025 18:21:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:03,522 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:03] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:08,884 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:08] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:13,782 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:19,132 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:24,162 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:29,318 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:34,131 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:39,123 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:44,168 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:49,171 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:54,191 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:22:59,723 - INFO - 127.0.0.1 - - [17/Sep/2025 18:22:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:04,382 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:09,157 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:14,487 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:14] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:19,401 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:24,407 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:29,400 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:34,435 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:39,442 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:45,294 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:45] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:51,303 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:23:56,320 - INFO - 127.0.0.1 - - [17/Sep/2025 18:23:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:01,360 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:06,209 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:11,221 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:16,421 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:16] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:21,211 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:21] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:26,207 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:26] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:31,272 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:31] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:36,553 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:36] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:41,898 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:46,530 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:46] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:51,561 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:24:56,670 - INFO - 127.0.0.1 - - [17/Sep/2025 18:24:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:02,169 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:02] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:06,980 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:11,993 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:17,358 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:22,399 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:22] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:27,790 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:27] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:32,699 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:37,677 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:37] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:42,682 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:42] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:47,672 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:52,733 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:52] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:25:57,756 - INFO - 127.0.0.1 - - [17/Sep/2025 18:25:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:03,019 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:03] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:08,032 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:08] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:13,013 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:17,999 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:23,013 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:28,029 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:28] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:33,029 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:38,028 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:43,030 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:48,045 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:53,377 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:26:58,118 - INFO - 127.0.0.1 - - [17/Sep/2025 18:26:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:03,970 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:03] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:08,119 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:08] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:13,020 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:18,011 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:23,008 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:28,256 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:28] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:33,263 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:38,950 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:43,731 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:48,282 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:53,926 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:27:58,259 - INFO - 127.0.0.1 - - [17/Sep/2025 18:27:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:04,093 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:09,055 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:14,075 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:14] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:18,532 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:23,929 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:28,511 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:28] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:33,526 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:38,510 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:43,673 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:48,674 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:53,818 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:28:58,808 - INFO - 127.0.0.1 - - [17/Sep/2025 18:28:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:04,154 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:08,914 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:08] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:13,915 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:19,488 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:24,020 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:28,924 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:28] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:33,914 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:38,922 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:43,915 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:48,923 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:53,949 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:29:59,402 - INFO - 127.0.0.1 - - [17/Sep/2025 18:29:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:04,037 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:08,957 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:08] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:13,959 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:18,958 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:23,974 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:23] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:28,960 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:28] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:33,970 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:38,976 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:43,963 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:48,963 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:48] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:53,968 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:53] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:30:58,963 - INFO - 127.0.0.1 - - [17/Sep/2025 18:30:58] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:04,152 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:09,338 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:14,761 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:14] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:19,581 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:24,340 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:29,385 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:34,703 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:39,455 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:44,406 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:49,332 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:54,336 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:31:59,341 - INFO - 127.0.0.1 - - [17/Sep/2025 18:31:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:04,332 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:09,348 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:14,349 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:14] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:19,344 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:24,396 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:29,343 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:34,338 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:34] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:39,344 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:39] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:44,431 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:44] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:49,334 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:54,431 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:32:59,642 - INFO - 127.0.0.1 - - [17/Sep/2025 18:32:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:04,876 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:04] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:09,517 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:09] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:12,249 - INFO -  * Detected change in '/home/abeselom/Desktop/projects/freelance/freelancer/nenadask/social-media-lead/scraper/app.py', reloading
+2025-09-17 18:33:12,717 - INFO -  * Restarting with stat
+2025-09-17 18:33:16,428 - INFO - MongoDB indexes created successfully
+2025-09-17 18:33:16,428 - INFO - Successfully connected to MongoDB
+2025-09-17 18:33:16,429 - INFO - Proxy configured for Instaloader
+2025-09-17 18:33:19,159 - ERROR - Proxy test failed: Expecting value: line 1 column 1 (char 0)
+2025-09-17 18:33:19,556 - WARNING -  * Debugger is active!
+2025-09-17 18:33:19,557 - INFO -  * Debugger PIN: 983-422-525
+2025-09-17 18:33:19,955 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:19] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:20,670 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:20] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:24,637 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:27,295 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:27] "[32mGET /stop_scraping HTTP/1.1[0m" 302 -
+2025-09-17 18:33:27,808 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:27] "GET / HTTP/1.1" 200 -
+2025-09-17 18:33:28,020 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:28] "GET / HTTP/1.1" 200 -
+2025-09-17 18:33:39,125 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:39] "[32mPOST /start_scraping HTTP/1.1[0m" 302 -
+2025-09-17 18:33:39,513 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 0)
+2025-09-17 18:33:39,646 - INFO - Profile already exists: https://www.instagram.com/brooklyn/
+2025-09-17 18:33:39,778 - INFO - Profile already exists: https://www.instagram.com/brooklyn_bourque/
+2025-09-17 18:33:39,902 - INFO - Profile already exists: https://www.instagram.com/brooklynkohl/
+2025-09-17 18:33:39,993 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:39] "GET / HTTP/1.1" 200 -
+2025-09-17 18:33:44,288 - INFO - Scraped Instagram profile: officially_brooklync (3173 followers)
+2025-09-17 18:33:45,924 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:45] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:46,567 - INFO - Profile already exists: https://www.instagram.com/nyc/
+2025-09-17 18:33:46,756 - INFO - Profile already exists: https://www.instagram.com/blvckmvnivc/
+2025-09-17 18:33:46,886 - INFO - Profile already exists: https://www.instagram.com/queensbprichards/
+2025-09-17 18:33:47,010 - INFO - Profile already exists: https://www.instagram.com/brooklynkarasack/
+2025-09-17 18:33:47,133 - INFO - Profile already exists: https://www.instagram.com/brooklynjazz.805/
+2025-09-17 18:33:47,494 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 10)
+2025-09-17 18:33:47,610 - INFO - Profile already exists: https://www.instagram.com/4am__nyc/
+2025-09-17 18:33:47,735 - INFO - Profile already exists: https://www.instagram.com/brooklynkarasack/
+2025-09-17 18:33:47,859 - INFO - Profile already exists: https://www.instagram.com/brooklyn_mcdougall/
+2025-09-17 18:33:48,094 - INFO - Profile already exists: https://www.instagram.com/gigi.nyc/
+2025-09-17 18:33:48,288 - INFO - Profile already exists: https://www.instagram.com/dirtqueennyc/
+2025-09-17 18:33:48,419 - INFO - Profile already exists: https://www.instagram.com/brooklyndecker/
+2025-09-17 18:33:48,549 - INFO - Profile already exists: https://www.instagram.com/lovingthebronx/
+2025-09-17 18:33:49,970 - INFO - Scraped Instagram profile: reachnyc (1848 followers)
+2025-09-17 18:33:50,373 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:50] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:53,940 - INFO - Profile already exists: https://www.instagram.com/lev.nyc/
+2025-09-17 18:33:54,064 - INFO - Profile already exists: https://www.instagram.com/nycmayorsoffice/
+2025-09-17 18:33:54,306 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 20)
+2025-09-17 18:33:54,435 - INFO - Profile already exists: https://www.instagram.com/printempsnewyork/
+2025-09-17 18:33:54,560 - INFO - Profile already exists: https://www.instagram.com/brooklyndeleye0117/
+2025-09-17 18:33:54,683 - INFO - Profile already exists: https://www.instagram.com/bronxgirlsskate/
+2025-09-17 18:33:54,808 - INFO - Profile already exists: https://www.instagram.com/townofwny/
+2025-09-17 18:33:54,931 - INFO - Profile already exists: https://www.instagram.com/brooklyntrackclub/
+2025-09-17 18:33:55,380 - INFO - 127.0.0.1 - - [17/Sep/2025 18:33:55] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:33:58,978 - INFO - Scraped Instagram profile: reachnyc (1848 followers)
+2025-09-17 18:34:00,415 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:00] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:02,861 - INFO - Profile already exists: https://www.instagram.com/brooklynrootsitalian/
+2025-09-17 18:34:02,997 - INFO - Profile already exists: https://www.instagram.com/imdonut.nyc/
+2025-09-17 18:34:03,122 - INFO - Profile already exists: https://www.instagram.com/bxdrafthouse/
+2025-09-17 18:34:03,475 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 30)
+2025-09-17 18:34:03,598 - INFO - Profile already exists: https://www.instagram.com/brooklyndeleye0117/
+2025-09-17 18:34:03,720 - INFO - Profile already exists: https://www.instagram.com/brooklyncurryproject/
+2025-09-17 18:34:03,849 - INFO - Profile already exists: https://www.instagram.com/innsidenewyork/
+2025-09-17 18:34:03,983 - INFO - Profile already exists: https://www.instagram.com/bronxgirlsskate/
+2025-09-17 18:34:04,107 - INFO - Profile already exists: https://www.instagram.com/brooklyntrackclub/
+2025-09-17 18:34:04,226 - INFO - Profile already exists: https://www.instagram.com/bxdrafthouse/
+2025-09-17 18:34:04,348 - INFO - Profile already exists: https://www.instagram.com/imdonut.nyc/
+2025-09-17 18:34:04,480 - INFO - Profile already exists: https://www.instagram.com/bridges.nyc/
+2025-09-17 18:34:05,584 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:05] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:10,902 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:10] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:13,001 - WARNING - Attempt 1 failed for Instagram homecookingny: JSON Query to api/v1/users/web_profile_info/?username=homecookingny: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=homecookingny
+2025-09-17 18:34:15,864 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:15] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:20,900 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:20] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:25,949 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:25] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:28,361 - WARNING - Attempt 2 failed for Instagram homecookingny: JSON Query to api/v1/users/web_profile_info/?username=homecookingny: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=homecookingny
+2025-09-17 18:34:30,897 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:30] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:35,899 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:35] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:41,020 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:45,941 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:45] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:51,088 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:54,836 - WARNING - Attempt 3 failed for Instagram homecookingny: JSON Query to api/v1/users/web_profile_info/?username=homecookingny: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=homecookingny
+2025-09-17 18:34:54,836 - ERROR - All attempts failed for Instagram homecookingny: JSON Query to api/v1/users/web_profile_info/?username=homecookingny: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=homecookingny
+2025-09-17 18:34:56,033 - INFO - 127.0.0.1 - - [17/Sep/2025 18:34:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:34:57,580 - INFO - Profile already exists: https://www.instagram.com/no.standing.nyc/
+2025-09-17 18:34:57,847 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 40)
+2025-09-17 18:34:57,971 - INFO - Profile already exists: https://www.instagram.com/peachez.nyc/
+2025-09-17 18:34:58,092 - INFO - Profile already exists: https://www.instagram.com/fsnewyork/
+2025-09-17 18:35:01,033 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:02,496 - WARNING - Attempt 1 failed for Instagram postnewyork: JSON Query to api/v1/users/web_profile_info/?username=postnewyork: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=postnewyork
+2025-09-17 18:35:06,370 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:11,005 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:15,996 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:15] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:21,084 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:21] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:22,943 - WARNING - Attempt 2 failed for Instagram postnewyork: JSON Query to api/v1/users/web_profile_info/?username=postnewyork: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=postnewyork
+2025-09-17 18:35:26,030 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:26] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:31,024 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:31] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:36,227 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:36] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:41,447 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:46,440 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:46] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:46,974 - WARNING - Attempt 3 failed for Instagram postnewyork: JSON Query to api/v1/users/web_profile_info/?username=postnewyork: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=postnewyork
+2025-09-17 18:35:46,975 - ERROR - All attempts failed for Instagram postnewyork: JSON Query to api/v1/users/web_profile_info/?username=postnewyork: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=postnewyork
+2025-09-17 18:35:51,152 - INFO - Profile already exists: https://www.instagram.com/eavesdrop.nyc/
+2025-09-17 18:35:51,421 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:35:55,991 - WARNING - Attempt 1 failed for Instagram reachnyc: JSON Query to api/v1/users/web_profile_info/?username=reachnyc: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=reachnyc
+2025-09-17 18:35:56,436 - INFO - 127.0.0.1 - - [17/Sep/2025 18:35:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:01,456 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:06,831 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:06] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:11,845 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:11] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:16,847 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:16] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:18,156 - WARNING - Attempt 2 failed for Instagram reachnyc: JSON Query to api/v1/users/web_profile_info/?username=reachnyc: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=reachnyc
+2025-09-17 18:36:21,879 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:21] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:26,836 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:26] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:32,354 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:32] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:36,862 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:36] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:41,964 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:41] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:42,739 - WARNING - Attempt 3 failed for Instagram reachnyc: JSON Query to api/v1/users/web_profile_info/?username=reachnyc: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=reachnyc
+2025-09-17 18:36:42,739 - ERROR - All attempts failed for Instagram reachnyc: JSON Query to api/v1/users/web_profile_info/?username=reachnyc: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=reachnyc
+2025-09-17 18:36:46,325 - INFO - Profile already exists: https://www.instagram.com/blackownedbklyn/
+2025-09-17 18:36:46,448 - INFO - Profile already exists: https://www.instagram.com/brooklyndeleye0117/
+2025-09-17 18:36:46,570 - INFO - Profile already exists: https://www.instagram.com/dinersofnyc/
+2025-09-17 18:36:46,693 - INFO - Profile already exists: https://www.instagram.com/nyrcwomen/
+2025-09-17 18:36:46,819 - INFO - Profile already exists: https://www.instagram.com/birchhoboken/
+2025-09-17 18:36:46,832 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:46] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:47,103 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 50)
+2025-09-17 18:36:47,230 - INFO - Profile already exists: https://www.instagram.com/bklynmavens/
+2025-09-17 18:36:47,357 - INFO - Profile already exists: https://www.instagram.com/lovingthebronx/
+2025-09-17 18:36:47,483 - INFO - Profile already exists: https://www.instagram.com/second.nyc/
+2025-09-17 18:36:47,615 - INFO - Profile already exists: https://www.instagram.com/lucia.newyork/
+2025-09-17 18:36:47,739 - INFO - Profile already exists: https://www.instagram.com/fouquets.newyork/
+2025-09-17 18:36:47,903 - INFO - Profile already exists: https://www.instagram.com/innsidenewyork/
+2025-09-17 18:36:48,048 - INFO - Profile already exists: https://www.instagram.com/niks.nyc/
+2025-09-17 18:36:48,176 - INFO - Profile already exists: https://www.instagram.com/bkstreetart/
+2025-09-17 18:36:48,302 - INFO - Profile already exists: https://www.instagram.com/juliej.nyc/
+2025-09-17 18:36:48,426 - INFO - Profile already exists: https://www.instagram.com/montestrattoria/
+2025-09-17 18:36:48,725 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 60)
+2025-09-17 18:36:48,850 - INFO - Profile already exists: https://www.instagram.com/brooklynbloomsnyc/
+2025-09-17 18:36:49,337 - INFO - Profile already exists: https://www.instagram.com/richhomiebrooklyn/
+2025-09-17 18:36:49,463 - INFO - Profile already exists: https://www.instagram.com/warkopnyc/
+2025-09-17 18:36:49,584 - INFO - Profile already exists: https://www.instagram.com/brassqueensnyc/
+2025-09-17 18:36:49,709 - INFO - Profile already exists: https://www.instagram.com/stregisnewyork/
+2025-09-17 18:36:51,830 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:51] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:53,902 - INFO - Scraped Instagram profile: nyctheteam (4634 followers)
+2025-09-17 18:36:56,851 - INFO - 127.0.0.1 - - [17/Sep/2025 18:36:56] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:36:58,631 - INFO - Profile already exists: https://www.instagram.com/bronxnightmarket/
+2025-09-17 18:36:58,759 - INFO - Profile already exists: https://www.instagram.com/brooklyncurryproject/
+2025-09-17 18:36:59,005 - INFO - Using cached SerpAPI result for site:instagram.com (intitle:NYC OR intitle:"New York" OR intitle:"Brooklyn" OR intitle:"Queens" OR intitle:"Bronx" OR intitle:"Staten Island" OR intitle:"Jersey City" OR intitle:"Hoboken" OR intitle:"Newark" OR intitle:"Yonkers" OR intitle:"White Plains") (start: 70)
+2025-09-17 18:36:59,131 - INFO - Profile already exists: https://www.instagram.com/fouquets.newyork/
+2025-09-17 18:36:59,259 - INFO - Profile already exists: https://www.instagram.com/stregisnewyork/
+2025-09-17 18:36:59,381 - INFO - Profile already exists: https://www.instagram.com/brooklyndumplingshop/
+2025-09-17 18:36:59,507 - INFO - Profile already exists: https://www.instagram.com/brooklynbridgepark/
+2025-09-17 18:36:59,627 - INFO - Profile already exists: https://www.instagram.com/montestrattoria/
+2025-09-17 18:36:59,751 - INFO - Profile already exists: https://www.instagram.com/juliej.nyc/
+2025-09-17 18:36:59,956 - INFO - Profile already exists: https://www.instagram.com/nytmag/
+2025-09-17 18:37:00,103 - INFO - Profile already exists: https://www.instagram.com/chambers.nyc/
+2025-09-17 18:37:00,227 - INFO - Profile already exists: https://www.instagram.com/superioringredients/
+2025-09-17 18:37:01,840 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:01] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:37:02,407 - INFO -  * Detected change in '/home/abeselom/Desktop/projects/freelance/freelancer/nenadask/social-media-lead/scraper/app.py', reloading
+2025-09-17 18:37:02,857 - INFO -  * Restarting with stat
+2025-09-17 18:37:07,742 - INFO - MongoDB indexes created successfully
+2025-09-17 18:37:07,742 - INFO - Successfully connected to MongoDB
+2025-09-17 18:37:07,743 - INFO - Proxy configured for Instaloader
+2025-09-17 18:37:12,274 - INFO - Proxy test successful. Your IP is: 31.206.107.66
+2025-09-17 18:37:12,560 - WARNING -  * Debugger is active!
+2025-09-17 18:37:12,560 - INFO -  * Debugger PIN: 983-422-525
+2025-09-17 18:37:12,567 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:12] "[32mGET /stop_scraping HTTP/1.1[0m" 302 -
+2025-09-17 18:37:13,376 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:37:13,752 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:37:14,260 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:14] "GET / HTTP/1.1" 200 -
+2025-09-17 18:37:24,618 - INFO -  * Detected change in '/home/abeselom/Desktop/projects/freelance/freelancer/nenadask/social-media-lead/scraper/app.py', reloading
+2025-09-17 18:37:25,120 - INFO -  * Restarting with stat
+2025-09-17 18:37:27,680 - INFO - MongoDB indexes created successfully
+2025-09-17 18:37:27,680 - INFO - Successfully connected to MongoDB
+2025-09-17 18:37:27,681 - INFO - Proxy configured for Instaloader
+2025-09-17 18:37:34,079 - INFO - Proxy test successful. Your IP is: 31.206.107.66
+2025-09-17 18:37:34,334 - WARNING -  * Debugger is active!
+2025-09-17 18:37:34,335 - INFO -  * Debugger PIN: 983-422-525
+2025-09-17 18:37:34,945 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:34] "[32mPOST /start_scraping HTTP/1.1[0m" 302 -
+2025-09-17 18:37:35,319 - INFO - Using cached SerpAPI result for site:tiktok.com (inurl:nyc OR inurl:newyork OR inurl:brooklyn OR inurl:queens OR inurl:bronx OR inurl:newark OR inurl:jerseycity) (start: 0)
+2025-09-17 18:37:36,958 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:36] "GET / HTTP/1.1" 200 -
+2025-09-17 18:37:38,960 - WARNING - Could not extract user info for: explaining-nyc-neighborhoods-with-map
+2025-09-17 18:37:42,512 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:42] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:37:47,416 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:47] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:37:48,347 - WARNING - Could not extract user info for: map-of-nyc-boroughs
+2025-09-17 18:37:52,355 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:52] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:37:57,396 - INFO - 127.0.0.1 - - [17/Sep/2025 18:37:57] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:38:00,149 - WARNING - Could not extract user info for: nyc-boroughs
+2025-09-17 18:38:02,400 - INFO - 127.0.0.1 - - [17/Sep/2025 18:38:02] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:38:07,397 - INFO - 127.0.0.1 - - [17/Sep/2025 18:38:07] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:38:07,504 - WARNING - Could not extract user info for: 5-boroughs-of-nyc
+2025-09-17 18:38:12,392 - INFO - 127.0.0.1 - - [17/Sep/2025 18:38:12] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:38:17,389 - INFO - 127.0.0.1 - - [17/Sep/2025 18:38:17] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:38:17,988 - WARNING - Could not extract user info for: the-towns-nyc-slang
+2025-09-17 18:56:13,660 - INFO - MongoDB indexes created successfully
+2025-09-17 18:56:13,660 - INFO - Successfully connected to MongoDB
+2025-09-17 18:56:13,660 - INFO - Proxy configured for Instaloader
+2025-09-17 18:56:27,057 - ERROR - Proxy test failed: HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10)
+2025-09-17 18:56:27,317 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.54.93.234:5000
+2025-09-17 18:56:27,317 - INFO - [33mPress CTRL+C to quit[0m
+2025-09-17 18:56:27,317 - INFO -  * Restarting with stat
+2025-09-17 18:56:30,422 - INFO - MongoDB indexes created successfully
+2025-09-17 18:56:30,422 - INFO - Successfully connected to MongoDB
+2025-09-17 18:56:30,422 - INFO - Proxy configured for Instaloader
+2025-09-17 18:56:32,768 - ERROR - Proxy test failed: Expecting value: line 1 column 1 (char 0)
+2025-09-17 18:56:33,019 - WARNING -  * Debugger is active!
+2025-09-17 18:56:33,019 - INFO -  * Debugger PIN: 983-422-525
+2025-09-17 18:56:33,267 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:56:33,718 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:56:38,755 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:56:43,750 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:56:49,105 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:49] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:56:54,600 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:54] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:56:59,210 - INFO - 127.0.0.1 - - [17/Sep/2025 18:56:59] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:05,656 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:05] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:08,981 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:08] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:13,911 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:13] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:18,917 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:18] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:24,017 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:24] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:29,473 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:29] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:33,919 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:33] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:38,912 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:38] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:43,918 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:43] "GET /get_status HTTP/1.1" 200 -
+2025-09-17 18:57:48,905 - INFO - 127.0.0.1 - - [17/Sep/2025 18:57:48] "GET /get_status HTTP/1.1" 200 -
