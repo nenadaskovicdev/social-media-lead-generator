@@ -1,6 +1,6 @@
 import requests
 
-SNAPSHOT_ID = "s_mfpvzexdpsqzr9088"  # replace with real snapshot id
+SNAPSHOT_ID = "s_mfudl8c516m65rskw2"  # replace with real snapshot id
 url = f"https://api.brightdata.com/datasets/v3/snapshot/{SNAPSHOT_ID}"
 
 headers = {
