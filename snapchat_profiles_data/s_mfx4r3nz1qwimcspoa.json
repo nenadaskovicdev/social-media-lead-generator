@@ -1,0 +1,76 @@
+[
+  {
+    "url": "https://www.snapchat.com/add/newyorkgiants",
+    "profile_id": "f211db43-0130-4a17-b7a8-ec318419617b",
+    "profile_name": "New York Giants",
+    "profile_username": "newyorkgiants",
+    "profile_description": "Official Snapchat of the New York Giants",
+    "profile_address": "East Rutherford, New Jersey, USA",
+    "profile_image_url": "https://cf-st.sc-cdn.net/aps/bolt/aHR0cHM6Ly9jZi1zdC5zYy1jZG4ubmV0L2QvV3FJOG1FYmdtWHdiUmlGejdTUjNXP2JvPUVnMGFBQm9BTWdFRVNBSlFHV0FCJnVjPTI1._RS0,90_FMjpeg",
+    "profile_url": "https://www.snapchat.com/@newyorkgiants",
+    "profile_follower_count": 383500,
+    "profile_same_as": [],
+    "profile_date_created": "2019-05-08T20:20:21.515Z",
+    "profile_date_modified": "2025-09-19T18:30:41.683Z",
+    "profile_snapcode_url": "https://app.snapchat.com/web/deeplink/snapcode?username=newyorkgiants&type=SVG&bitmoji=enable",
+    "profile_badge": 1,
+    "profile_category": "public-profile-category-v3-business-group",
+    "profile_subcategory": "public-profile-subcategory-v3-sports-team",
+    "profile_has_curated_highlights": true,
+    "profile_has_spotlight_highlights": true,
+    "profile_has_story": false,
+    "profile_business_profile_id": "f211db43-0130-4a17-b7a8-ec318419617b",
+    "profile_creation_timestamp_ms": 1557346821515,
+    "profile_last_update_timestamp_ms": 1758306641683,
+    "breadcrumb": [
+      {
+        "position": 0,
+        "name": "New York Giants",
+        "url": "https://www.snapchat.com/@newyorkgiants"
+      }
+    ],
+    "video": {
+      "title": "Spotlight Snap",
+      "description": "Another Spotlight Snap brought to you by Snapchat",
+      "video_url": "https://cf-st.sc-cdn.net/d/iUSxmdkXEqGYUZj2GCZG8.27.IRZXSOY?mo=GmYaCTIBBEgCUC5gAVoQU3BvdGxpZ2h0U2hhcmluZ6IBQQgbEjAKLgjU3ksgATCcBDjAB0ABSg4KCUMVFBQXFhQWFRD0A1CyrwFoAnUYjFJAfQAAgD8iCxIAKgdJUlpYU09ZkAOyrwE%3D&uc=46",
+      "page_url": "https://www.snapchat.com/@newyorkgiants",
+      "thumbnail_url": "https://cf-st.sc-cdn.net/d/iUSxmdkXEqGYUZj2GCZG8.256.IRZXSOY?mo=GkMaCTIBBEgCUC5gAVoQRGZMYXJnZVRodW1ibmFpbKIBEAiAAiILEgAqB0lSWlhTT1miARAImgoiCxIAKgdJUlpYU09Z&uc=46",
+      "upload_date": "2025-09-19T18:30:41.683Z",
+      "duration": "22450",
+      "width": "540",
+      "height": "960",
+      "keywords": [],
+      "is_attributed": true,
+      "context_cards": [],
+      "creator": {
+        "name": "New York Giants",
+        "url": "https://www.snapchat.com/add/newyorkgiants",
+        "follower_count": 0
+      },
+      "view_count": 0,
+      "share_count": 0,
+      "comment_count": 0,
+      "comments": []
+    },
+    "highlights": [
+      "https://www.snapchat.com/add/newyorkgiants/highlight/e7d1556e-0941-46f8-ab09-54e0a5e9f7bb",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/b62e1012-2267-49fc-bb6b-84d1c95049a6",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/41461f73-3885-4693-8d9d-1f925a7497fd",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/6b0c718c-5f99-4d72-b57d-1248a7d5501d",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/c5290a0a-36ed-46dd-b597-a0530bf63db3",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/992f101c-d080-4d88-ba2a-28f9e3e082a8",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/d3fefa96-d52f-4147-aeb4-9e6024ebe3dd",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/4011c0ca-0cbd-4912-af72-3187c5a0daa0",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/98568ebb-c8b6-4697-924f-45aa71e37461",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/36dae867-8596-4dee-b783-ebb0bbcdcdd4",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/bbfe3a8a-ab45-4124-99fe-eb810ed0d44c",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/d80fad89-d8f2-407d-8b04-98c4a0efb300",
+      "https://www.snapchat.com/add/newyorkgiants/highlight/241d9c8e-1427-4453-b7d5-12c94d0a8e75"
+    ],
+    "timestamp": "2025-09-23T22:31:54.150Z",
+    "input": {
+      "url": "https://www.snapchat.com/add/newyorkgiants",
+      "collect_all_highlights": true
+    }
+  }
+]
